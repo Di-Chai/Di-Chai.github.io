@@ -1,6 +1,6 @@
 ## Biography
 
-Di Chai is a Ph.D. student of computer science and engineering at Hong Kong University of Science and Technology. He is under the supervision of [Prof. Qiang Yang](https://cse.hkust.edu.hk/~qyang/) and [Prof. Kai Chen](https://cse.hkust.edu.hk/~kaichen/). His research interests are federated learning and privacy-preserving machine learning.
+Di Chai is a Ph.D. student of computer science and engineering at the Hong Kong University of Science and Technology. He is under the supervision of [Prof. Qiang Yang](https://cse.hkust.edu.hk/~qyang/) and [Prof. Kai Chen](https://cse.hkust.edu.hk/~kaichen/). His research interests are federated learning and privacy-preserving machine learning.
 
 Email: dchai@cse.ust.hk
 
@@ -8,7 +8,7 @@ Email: dchai@cse.ust.hk
 
 ### [FedEval (Federated Learning Evaluation System)](https://github.com/Di-Chai/FedEval)
 
-FedEval is a federated learning benchmark system with a comprehensive evaluation model, which defines five evaluation metrics for the FL systems: Accuracy, Communication, Time consumption, Privacy and Robustness.
+FedEval is a federated learning benchmark system with a comprehensive evaluation model, which defines five evaluation metrics for the FL systems: Accuracy, Communication, Time consumption, Privacy, and Robustness.
 
 - **D. Chai**, L. Wang, K. Chen, & Q. Yang. "FedEval: A Benchmark System with a Comprehensive Evaluation Model for Federated Learning". arXiv preprint arXiv:2011.09655v2 (2020). [[Arxiv](https://arxiv.org/pdf/2011.09655.pdf)]
 
@@ -30,7 +30,7 @@ Urban Computing ToolBox is a package providing spatial-temporal predicting model
 
 - **D. Chai**, L. Wang, K. Chen, Q. Yang, “Efficient Federated Matrix Factorization against Inference Attacks”. ACM Trans. Intelligent Systems and Technology, accepted (2021). [[ACM](https://dl.acm.org/doi/10.1145/3501812)]
 
-- C. Zhang, J. Zhang,  **D. Chai**, K. Chen, "Aegis: A Trusted, Automatic and Accurate Verification Framework for Vertical Federated Learning". IJCAI FL-Workshop, Best Application Award. [[Arxiv](https://arxiv.org/abs/2108.06958)]
+- C. Zhang, J. Zhang,  **D. Chai**, K. Chen, "Aegis: A Trusted, Automatic and Accurate Verification Framework for Vertical Federated Learning". IJCAI FL-Workshop (2021), Best Application Award. [[Arxiv](https://arxiv.org/abs/2108.06958)]
 
 ### Spatio-temporal AI
 
@@ -44,4 +44,4 @@ Urban Computing ToolBox is a package providing spatial-temporal predicting model
 
 ## Industry Experience
 
-- 2018 - Now, Interterl at Clustar Technology Co., Ltd
+- 2018 - Now, Intern at Clustar Technology Co., Ltd
