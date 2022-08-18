@@ -24,7 +24,7 @@ Urban Computing ToolBox is a package providing spatial-temporal predicting model
 
 ### Federated Learning
 
-- **D. Chai**, L. Wang, J. Zhang, L. Yang, S. Cai, K. Chen, & Q. Yang. "Practical Lossless Federated Singular Vector Decomposition Over Billion-Scale Data". KDD, research track, accepted (2022). [[Arxiv](https://arxiv.org/abs/2105.08925)]
+- **D. Chai**, L. Wang, J. Zhang, L. Yang, S. Cai, K. Chen, & Q. Yang. "Practical Lossless Federated Singular Vector Decomposition Over Billion-Scale Data". KDD, research track, accepted (2022). [[Arxiv](https://arxiv.org/abs/2105.08925)][[ACM](https://dl.acm.org/doi/abs/10.1145/3534678.3539402)]
 
 - **D. Chai**, L. Wang, K. Chen, Q. Yang, “Secure Federated Matrix Factorization”. IEEE Intelligent Systems, 36(5): 11-20 (2021). [[IEEE](https://ieeexplore.ieee.org/abstract/document/9162459)][[Arxiv](https://arxiv.org/abs/1906.05108)]
 
