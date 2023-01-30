@@ -42,6 +42,3 @@ Urban Computing ToolBox is a package providing spatial-temporal predicting model
 
 - **D. Chai**, L. Wang, K. Chen, & Q. Yang. "FedEval: A Benchmark System with a Comprehensive Evaluation Model for Federated Learning". arXiv preprint arXiv:2011.09655v2 (2020). [[Arxiv](https://arxiv.org/pdf/2011.09655.pdf)]
 
-## Industry Experience
-
-- 2018 - Now, Intern at Clustar Technology Co., Ltd
