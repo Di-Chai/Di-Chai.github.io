@@ -2,7 +2,7 @@
 
 Di Chai is a Ph.D. student of computer science and engineering at the Hong Kong University of Science and Technology. He is under the supervision of [Prof. Qiang Yang](https://cse.hkust.edu.hk/~qyang/) and [Prof. Kai Chen](https://cse.hkust.edu.hk/~kaichen/). His research interests are federated learning and privacy-preserving machine learning.
 
-Email: dchai@cse.ust.hk
+Email: dchai[at]cse[dot]ust[dot]hk
 
 ## Research Projects
 
