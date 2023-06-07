@@ -34,7 +34,7 @@ Urban Computing ToolBox is a package providing spatial-temporal predicting model
 
 ### Spatio-temporal AI
 
-- **D. Chai**, L. Wang, Q. Yang. “Bike Flow Prediction with Multi-Graph Convolutional Networks”. SIGSPATIAL/GIS 2018: 397-400 (2018). [[ACM](https://dl.acm.org/doi/10.1145/3274895.3274896)] [**Top 1 most cited paper in GIS 2018**]
+- **D. Chai**, L. Wang, Q. Yang. “Bike Flow Prediction with Multi-Graph Convolutional Networks”. SIGSPATIAL/GIS 2018: 397-400 (2018). [[ACM](https://dl.acm.org/doi/10.1145/3274895.3274896)]
 
 - L. Wang, **D. Chai**, X. Liu, L. Chen, & K. Chen. "Exploring the Generalizability of Spatio-Temporal Traffic Prediction: Meta-Modeling and an Analytic Framework". IEEE Trans. Knowledge and Data Engineering, accepted (2021). [[IEEE](https://ieeexplore.ieee.org/document/9627543)][[Arxiv](https://arxiv.org/pdf/2009.09379.pdf)] 
 
