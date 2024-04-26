@@ -10,7 +10,7 @@ Email: dchai[at]cse[dot]ust[dot]hk
 
 FedEval is a federated learning benchmark system with a comprehensive evaluation model, which defines five evaluation metrics for the FL systems: Accuracy, Communication, Time consumption, Privacy, and Robustness.
 
-- **D. Chai**, L. Wang, K. Chen, & Q. Yang. "FedEval: A Benchmark System with a Comprehensive Evaluation Model for Federated Learning". arXiv preprint arXiv:2011.09655v2 (2020). [[Arxiv](https://arxiv.org/pdf/2011.09655.pdf)]
+- **D. Chai***, L. Wang*, L Yang, J Zhang, K. Chen, & Q. Yang. "A Survey for Federated Learning Evaluations: Goals and Measures". IEEE Trans. Knowledge and Data Engineering, accepted (2024). (*Equal Contribution) [[IEEE Early Access](https://ieeexplore.ieee.org/abstract/document/10480259/)][[Arxiv](https://arxiv.org/pdf/2308.11841)]
 
 ### [UCTB (Urban Computing ToolBox)](https://github.com/uctb/UCTB)
 
@@ -37,8 +37,4 @@ Urban Computing ToolBox is a package providing spatial-temporal predicting model
 - **D. Chai**, L. Wang, Q. Yang. “Bike Flow Prediction with Multi-Graph Convolutional Networks”. SIGSPATIAL/GIS 2018: 397-400 (2018). [[ACM](https://dl.acm.org/doi/10.1145/3274895.3274896)]
 
 - L. Wang, **D. Chai**, X. Liu, L. Chen, & K. Chen. "Exploring the Generalizability of Spatio-Temporal Traffic Prediction: Meta-Modeling and an Analytic Framework". IEEE Trans. Knowledge and Data Engineering, accepted (2021). [[IEEE](https://ieeexplore.ieee.org/document/9627543)][[Arxiv](https://arxiv.org/pdf/2009.09379.pdf)] 
-
-### Preprints
-
-- **D. Chai**, L. Wang, K. Chen, & Q. Yang. "FedEval: A Benchmark System with a Comprehensive Evaluation Model for Federated Learning". arXiv preprint arXiv:2011.09655v2 (2020). [[Arxiv](https://arxiv.org/pdf/2011.09655.pdf)]
 
