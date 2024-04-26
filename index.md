@@ -10,7 +10,7 @@ Email: dchai[at]cse[dot]ust[dot]hk
 
 FedEval is a federated learning benchmark system with a comprehensive evaluation model, which defines five evaluation metrics for the FL systems: Accuracy, Communication, Time consumption, Privacy, and Robustness.
 
-- **D. Chai***, L. Wang*, L Yang, J Zhang, K. Chen, & Q. Yang. "A Survey for Federated Learning Evaluations: Goals and Measures". IEEE Trans. Knowledge and Data Engineering, accepted (2024). (*Equal Contribution) [[IEEE Early Access](https://ieeexplore.ieee.org/abstract/document/10480259/)][[Arxiv](https://arxiv.org/pdf/2308.11841)]
+- **D. Chai**\*, L. Wang\*, L Yang, J Zhang, K. Chen, & Q. Yang. "A Survey for Federated Learning Evaluations: Goals and Measures". IEEE Trans. Knowledge and Data Engineering, accepted (2024). (*Equal Contribution) [[IEEE Early Access](https://ieeexplore.ieee.org/abstract/document/10480259/)][[Arxiv](https://arxiv.org/pdf/2308.11841)]
 
 ### [UCTB (Urban Computing ToolBox)](https://github.com/uctb/UCTB)
 
