@@ -28,7 +28,7 @@ Urban Computing ToolBox is a package providing spatial-temporal predicting model
 
 - **Di Chai**, Leye Wang, Junxue Zhang, Liu Yang, S. Cai, Kai Chen, & Qiang Yang. "Practical Lossless Federated Singular Vector Decomposition Over Billion-Scale Data". KDD 2022, research track. [[Arxiv](https://arxiv.org/abs/2105.08925)][[ACM](https://dl.acm.org/doi/abs/10.1145/3534678.3539402)]
 
-- Han Tian, Chaoliang Zeng, Zhenghang Ren, **Di Chai**, Junxue Zhang, Kai Chen, Qiang Yang, "Sphinx: Enabling privacy-preserving online learning over the cloud". IEEE, S&P 2022. [[IEEE](https://ieeexplore.ieee.org/abstract/document/9833648)]
+- Han Tian, Chaoliang Zeng, Zhenghang Ren, **Di Chai**, Junxue Zhang, Kai Chen, Qiang Yang, "Sphinx: Enabling privacy-preserving online learning over the cloud". IEEE S&P 2022. [[IEEE](https://ieeexplore.ieee.org/abstract/document/9833648)]
 
 - **Di Chai**, Leye Wang, Qiang Yang. "Bike Flow Prediction with Multi-Graph Convolutional Networks". SIGSPATIAL/GIS 2018: 397-400 (2018). [[ACM](https://dl.acm.org/doi/10.1145/3274895.3274896)] [**Google scholar 300+ citations**]
 
