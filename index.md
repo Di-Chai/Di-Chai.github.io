@@ -4,6 +4,11 @@ Di Chai is a Ph.D. student of computer science and engineering at the Hong Kong 
 
 Email: dchai[at]cse[dot]ust[dot]hk
 
+
+[<u>**Curriculum Vitae**</u>](./assets/pdf/CV_DiChai.pdf)
+
+[<u>**Research Statement**</u>](./assets/pdf/Research_Statement_DiChai.pdf)
+
 ## Research Projects
 
 ### [FedEval (Federated Learning Evaluation System)](https://github.com/Di-Chai/FedEval)
