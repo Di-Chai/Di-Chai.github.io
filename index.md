@@ -1,6 +1,6 @@
 ## Biography
 
-Di Chai is a Ph.D. student of computer science and engineering at the Hong Kong University of Science and Technology. He is under the supervision of [Prof. Qiang Yang](https://cse.hkust.edu.hk/~qyang/) and [Prof. Kai Chen](https://cse.hkust.edu.hk/~kaichen/). His research interests are intelligent, secure, and high-performance distributed computation systems.
+Di Chai is a Ph.D. student of computer science and engineering at the Hong Kong University of Science and Technology. He is under the supervision of [Prof. Kai Chen](https://cse.hkust.edu.hk/~kaichen/) and [Prof. Qiang Yang](https://cse.hkust.edu.hk/~qyang/). His research interests are intelligent, secure, and high-performance distributed computation systems.
 
 Email: dchai[at]cse[dot]ust[dot]hk
 
