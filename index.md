@@ -29,7 +29,7 @@ Urban Computing ToolBox is a package providing spatial-temporal predicting model
 
 ### Conference Paper
 
-- **Di Chai**, Junxue Zhang, Liu Yang, Yilun Jin, Leye Wang, Kai Chen, & Qiang Yang. "Efficient Decentralized Federated Singular Vector Decomposition". USENIX ATC'24 Accepted. [[Code](https://github.com/Di-Chai/Excalibur)]
+- **Di Chai**, Junxue Zhang, Liu Yang, Yilun Jin, Leye Wang, Kai Chen, & Qiang Yang. "Efficient Decentralized Federated Singular Vector Decomposition". USENIX ATC'24 Accepted. [[Paper](https://www.usenix.org/conference/atc24/presentation/chai)] [[Code](https://github.com/Di-Chai/Excalibur)]
 
 - **Di Chai**, Leye Wang, Junxue Zhang, Liu Yang, Shuowei Cai, Kai Chen, & Qiang Yang. "Practical Lossless Federated Singular Vector Decomposition Over Billion-Scale Data". KDD 2022, research track. [[Paper](https://dl.acm.org/doi/abs/10.1145/3534678.3539402)] [[Code](https://github.com/Di-Chai/FedEval/tree/master/research/FedSVD)]
 
