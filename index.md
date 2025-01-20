@@ -1,29 +1,17 @@
 ## Biography
 
-Di Chai is a Ph.D. student of computer science and engineering at the Hong Kong University of Science and Technology. He is under the supervision of [Prof. Kai Chen](https://cse.hkust.edu.hk/~kaichen/) and [Prof. Qiang Yang](https://cse.hkust.edu.hk/~qyang/). His research interests are intelligent, secure, and high-performance distributed computation systems.
+Di Chai is a Ph.D. student of computer science and engineering at the Hong Kong University of Science and Technology. He is under the supervision of [Prof. Kai Chen](https://cse.hkust.edu.hk/~kaichen/) and [Prof. Qiang Yang](https://cse.hkust.edu.hk/~qyang/). His research interest is high-performance machine learning systems, such as efficient distributed matrix decompositions and training systems for large language models.
 
 Email: dchai[at]cse[dot]ust[dot]hk
 
-
-[<u>Curriculum Vitae</u>](./assets/pdf/CV_DiChai.pdf)
-
+[<u>Curriculum Vitae</u>](./assets/pdf/CV_DiChai.pdf) and 
 [<u>Research Statement</u>](./assets/pdf/Research_Statement_DiChai.pdf)
 
-## Research Projects
+## Undergoing Project
 
-### [FedEval (Federated Learning Evaluation System)](https://github.com/Di-Chai/FedEval)
+#### Unleashing Efficiency of Token Filtering in LLM Training (*submitted to ATC*)
 
-FedEval is a federated learning benchmark system with a comprehensive evaluation model, which defines three evaluation goals and the corresponding measures for the FL systems: utility, efficiency, and security & privacy.
-
-- **Di Chai**\*, Leye Wang\*, Liu Yang, Junxue Zhang, Kai Chen, & Qiang Yang. "A Survey for Federated Learning Evaluations: Goals and Measures". IEEE TKDE accepted (2024). (*Equal Contribution) [[Paper](https://ieeexplore.ieee.org/abstract/document/10480259/)] [[Code](https://github.com/Di-Chai/FedEval)]
-
-### [UCTB (Urban Computing ToolBox)](https://github.com/uctb/UCTB)
-
-Urban Computing ToolBox is a package providing spatial-temporal predicting models. It contains both conventional models and state-of-the-art deep learning models. Besides, benchmark datasets built from open data are included. More details in:
-
-- Leye Wang, **Di Chai**, Xuanzhe Liu, Liyue Chen, & Kai Chen. "Exploring the Generalizability of Spatio-Temporal Traffic Prediction: Meta-Modeling and an Analytic Framework". IEEE TKDE accepted (2021). [[Paper](https://ieeexplore.ieee.org/document/9627543)] [[Code](https://github.com/uctb/UCTB)] 
-
-- 陈李越，**柴迪**，王乐业. "UCTB: 时空人群流动预测工具箱". 计算机科学与探索 (2021). [[Paper](http://fcst.ceaj.org/CN/abstract/abstract2577.shtml)]
+Token filtering aims to enhance the utility of large language models (LLMs) by removing inconsequential tokens during training. However, previous methods have not achieved significant improvements due to limited sparsity from filtering only in output layers and inefficient sparse GEMM processes. We address these issues by filtering tokens across all layers and optimizing GEMM operations, resulting in notable reductions in backpropagation time (up to 35\%) and overall training time (up to 22\%). Evaluations show that our system improves model utility by 16\% compared to standard training while reducing training time significantly, and it can be easily integrated into existing frameworks.
 
 ## Publications
 
