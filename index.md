@@ -9,9 +9,9 @@ Email: dchai[at]cse[dot]ust[dot]hk
 
 ## Undergoing Project
 
-#### Accelerate LLM Training through Token Filtering (*submitted*)
+#### Enhancing Token Filtering Efficiency in Large Language Model Training with Collider
 
-Token filtering aims to enhance the utility of large language models (LLMs) by removing inconsequential tokens during training. However, previous methods have not achieved significant improvements due to limited sparsity from filtering only in output layers and inefficient sparse GEMM processes. We address these issues by filtering tokens across all layers and optimizing GEMM operations, resulting in notable reductions in backpropagation time (more than 30%) and overall training time (more than 20%). Evaluations show that our system improves model utility compared to standard training while reducing training time significantly, and it can be easily integrated into existing frameworks.
+Token filtering aims to enhance the utility of large language models (LLMs) by removing inconsequential tokens during training. However, previous methods have not achieved significant improvements due to limited sparsity from filtering only in output layers and inefficient sparse GEMM processes. We address these issues by filtering tokens across all layers and optimizing GEMM operations, resulting in notable reductions in backpropagation time (more than 30%) and overall training time (more than 20%). Evaluations show that our system improves model utility compared to standard training while reducing training time significantly, and it can be easily integrated into existing frameworks. [[Paper](https://www.arxiv.org/abs/2502.00340)]
 
 ## Publications
 
