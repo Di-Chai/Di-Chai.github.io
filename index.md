@@ -1,44 +1,62 @@
 ## Biography
 
-Di Chai is a Ph.D. student of computer science and engineering at the Hong Kong University of Science and Technology. He is under the supervision of [Prof. Kai Chen](https://cse.hkust.edu.hk/~kaichen/) and [Prof. Qiang Yang](https://cse.hkust.edu.hk/~qyang/). His research interest is high-performance machine learning systems, such as efficient distributed matrix decompositions and training systems for large language models.
+I am currently an assistant professor at the [School of Computing and Artificial Intelligence, Shanghai University of Finance and Economics](https://scai.sufe.edu.cn/). Before that, I obtained my Ph.D. at the Hong Kong University of Science and Technology under the supervision of [Prof. Kai Chen](https://cse.hkust.edu.hk/~kaichen/) and [Prof. Qiang Yang](https://cse.hkust.edu.hk/~qyang/). I have also collaborated closely with [Prof. Leye Wang](https://wangleye.github.io/) and [Prof. Junxue Zhang](https://snowzjx.me/). My research interests focus on developing secure, accurate, and high-performance machine learning systems.
 
-Email: dchai[at]cse[dot]ust[dot]hk
+Email: chaidi[at]mail[dot]sufe[dot]edu[dot]cn
 
-[<u>Curriculum Vitae</u>](./assets/pdf/CV_DiChai.pdf) and 
-[<u>Research Statement</u>](./assets/pdf/Research_Statement_DiChai.pdf)
+## Work in Progress
 
-## Undergoing Project
-
-#### Accelerate LLM Training through Token Filtering (*submitted*)
-
-Token filtering aims to enhance the utility of large language models (LLMs) by removing inconsequential tokens during training. However, previous methods have not achieved significant improvements due to limited sparsity from filtering only in output layers and inefficient sparse GEMM processes. We address these issues by filtering tokens across all layers and optimizing GEMM operations, resulting in notable reductions in backpropagation time (more than 30%) and overall training time (more than 20%). Evaluations show that our system improves model utility compared to standard training while reducing training time significantly, and it can be easily integrated into existing frameworks.
+- Enhancing Token Filtering Efficiency in Large Language Model Training with Collider. [[Paper](https://arxiv.org/pdf/2502.00340)]  
+**Di Chai**, Pengbo Li, Feiyuan Zhang, Yilun Jin, Han Tian, Junxue Zhang, Kai Chen.  
+*arXiv:2502.00340 [cs.LG] 2025*
 
 ## Publications
 
-### Conference Paper
+- Efficient Decentralized Federated Singular Vector Decomposition. [[Paper](https://www.usenix.org/conference/atc24/presentation/chai)] [[Code](https://github.com/Di-Chai/Excalibur)]  
+**Di Chai**, Junxue Zhang, Liu Yang, Yilun Jin, Leye Wang, Kai Chen, Qiang Yang.  
+*USENIX ATC'24 [CCF-A]*  
 
-- **Di Chai**, Junxue Zhang, Liu Yang, Yilun Jin, Leye Wang, Kai Chen, & Qiang Yang. "Efficient Decentralized Federated Singular Vector Decomposition". USENIX ATC'24 Accepted. [[Paper](https://www.usenix.org/conference/atc24/presentation/chai)] [[Code](https://github.com/Di-Chai/Excalibur)]
+- A Survey for Federated Learning Evaluations: Goals and Measures. [[Paper](https://ieeexplore.ieee.org/abstract/document/10480259/)] [[Code](https://github.com/Di-Chai/FedEval)]  
+**Di Chai**, Leye Wang, Liu Yang, Junxue Zhang, Kai Chen, Qiang Yang.  
+*IEEE TKDE'24 [CCF-A]*  
 
-- **Di Chai**, Leye Wang, Junxue Zhang, Liu Yang, Shuowei Cai, Kai Chen, & Qiang Yang. "Practical Lossless Federated Singular Vector Decomposition Over Billion-Scale Data". KDD 2022, research track. [[Paper](https://dl.acm.org/doi/abs/10.1145/3534678.3539402)] [[Code](https://github.com/Di-Chai/FedEval/tree/master/research/FedSVD)]
+- Practical Lossless Federated Singular Vector Decomposition Over Billion-Scale Data. [[Paper](https://dl.acm.org/doi/abs/10.1145/3534678.3539402)] [[Code](https://github.com/Di-Chai/FedEval/tree/master/research/FedSVD)]  
+**Di Chai**, Leye Wang, Junxue Zhang, Liu Yang, Shuowei Cai, Kai Chen, Qiang Yang.  
+*ACM SIGKDD'22 [CCF-A]*
 
-- Han Tian, Chaoliang Zeng, Zhenghang Ren, **Di Chai**, Junxue Zhang, Kai Chen, Qiang Yang, "Sphinx: Enabling privacy-preserving online learning over the cloud". IEEE S&P 2022. [[Paper](https://ieeexplore.ieee.org/abstract/document/9833648)]
+- Secure Federated Matrix Factorization. [[Paper](https://ieeexplore.ieee.org/abstract/document/9162459)] [[Code](https://github.com/Di-Chai/FedMF)]  
+**Di Chai**, Leye Wang, Kai Chen, Qiang Yang.  
+*IEEE Intelligent Systems'21 [400+ Citations]*  
 
-- **Di Chai**, Leye Wang, Qiang Yang. "Bike Flow Prediction with Multi-Graph Convolutional Networks". SIGSPATIAL/GIS 2018: 397-400 (2018). [[Paper](https://dl.acm.org/doi/10.1145/3274895.3274896)] [[Code](https://github.com/uctb/UCTB)] [**Google Scholar 300+ citations**]
+- Efficient Federated Matrix Factorization against Inference Attacks. [[Paper](https://dl.acm.org/doi/10.1145/3501812)]  
+**Di Chai**, Leye Wang, Kai Chen, Qiang Yang.  
+*ACM TIST'21*
 
-### Journal Paper
+- Bike Flow Prediction with Multi-Graph Convolutional Networks. [[Paper](https://dl.acm.org/doi/10.1145/3274895.3274896)] [[Code](https://github.com/uctb/UCTB)]  
+**Di Chai**, Leye Wang, Qiang Yang.  
+*ACM SIGSPATIAL'18 [350+ Citations]* 
 
-- **Di Chai**\*, Leye Wang\*, Liu Yang, Junxue Zhang, Kai Chen, & Qiang Yang. "A Survey for Federated Learning Evaluations: Goals and Measures". IEEE TKDE accepted (2024). (*Equal Contribution) [[Paper](https://ieeexplore.ieee.org/abstract/document/10480259/)] [[Code](https://github.com/Di-Chai/FedEval)]
+- Sequoia: An Accessible and Extensible Framework for Privacy-Preserving Machine Learning over Dis-
+tributed Data. [[Paper](https://dl.acm.org/doi/10.1145/3709742)]  
+Kaiqiang Xu, **Di Chai**, Junxue Zhang, Fan Lai, Kai Chen.  
+*ACM SIGMOD'25 [CCF-A]*
 
-- **Di Chai**, Leye Wang, Kai Chen, Qiang Yang, "Secure Federated Matrix Factorization". IEEE Intelligent Systems, 36(5): 11-20 (2021). [[Paper](https://ieeexplore.ieee.org/abstract/document/9162459)] [[Code](https://github.com/Di-Chai/FedMF)] [**Google Scholar 300+ citations**]
+- Exploring the Generalizability of Spatio-Temporal Traffic Prediction: Meta-Modeling and an Analytic Framework. [[Paper](https://ieeexplore.ieee.org/document/9627543)] [[Code](https://github.com/uctb/UCTB)]  
+Leye Wang, **Di Chai**, Xuanzhe Liu, Liyue Chen, Kai Chen.  
+*IEEE TKDE'23 [CCF-A]*
 
-- **Di Chai**, Leye Wang, Kai Chen, Qiang Yang, "Efficient Federated Matrix Factorization against Inference Attacks". ACM TIST (2021). [[Paper](https://dl.acm.org/doi/10.1145/3501812)]
+- Sphinx: Enabling privacy-preserving online learning over the cloud. [[Paper](https://ieeexplore.ieee.org/abstract/document/9833648)]  
+Han Tian, Chaoliang Zeng, Zhenghang Ren, **Di Chai**, Junxue Zhang, Kai Chen, Qiang Yang.  
+*IEEE S&P'22 [CCF-A]* 
 
-- Leye Wang, **Di Chai**, Xuanzhe Liu, Liyue Chen, & Kai Chen. "Exploring the Generalizability of Spatio-Temporal Traffic Prediction: Meta-Modeling and an Analytic Framework". IEEE TKDE, accepted (2021). [[Paper](https://ieeexplore.ieee.org/document/9627543)] [[Code](https://github.com/uctb/UCTB)] 
+- Practical and secure federated recommendation with personalized mask. [[Paper](https://arxiv.org/pdf/2109.02464)]  
+Liu Yang, Junxue Zhang, **Di Chai**, Leye Wang, Kun Guo, Kai Chen, Qiang Yang.  
+*FL-IJCAI'22*
 
-### Workshop Paper
+- Secure forward aggregation for vertical federated neural networks. [[Paper](https://arxiv.org/pdf/2207.00165)]  
+Shuowei Cai, **Di Chai**, Liu Yang, Junxue Zhang, Yilun Jin, Leye Wang, Kun Guo, Kai Chen.  
+*FL-IJCAI'22*
 
-- Liu Yang, Junxue Zhang, **Di Chai**, Leye Wang, Kun Guo, Kai Chen, Qiang Yang, "Practical and secure federated recommendation with personalized mask". International Workshop on Trustworthy Federated Learning (2022). [[Paper](https://arxiv.org/pdf/2109.02464)]
-
-- Shuowei Cai, **Di Chai**, Liu Yang, Junxue Zhang, Yilun Jin, Leye Wang, Kun Guo, Kai Chen, "Secure forward aggregation for vertical federated neural networks". International Workshop on Trustworthy Federated Learning (2022). [[Paper](https://arxiv.org/pdf/2207.00165)]
-
-- Cengguang Zhang, Junxue Zhang,  **Di Chai**, Kai Chen, "Aegis: A Trusted, Automatic and Accurate Verification Framework for Vertical Federated Learning". IJCAI FL-Workshop (2021), **Best Application Award**. [[Paper](https://arxiv.org/pdf/2108.06958)]
+- Aegis: A Trusted, Automatic and Accurate Verification Framework for Vertical Federated Learning. [[Paper](https://arxiv.org/pdf/2108.06958)]    
+Cengguang Zhang, Junxue Zhang, **Di Chai**, Kai Chen.  
+*FL-IJCAI'21 [Best Application Award]*. 

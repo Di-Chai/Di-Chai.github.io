@@ -1,2 +1,2 @@
 # Di Chai
-PhD Student, HKUST
+Assistant Professor, SUFE
