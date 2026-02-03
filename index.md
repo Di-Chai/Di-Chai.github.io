@@ -7,7 +7,7 @@ Email: chaidi[at]mail[dot]sufe[dot]edu[dot]cn
 ## Work in Progress
 
 - Enhancing Token Filtering Efficiency in Large Language Model Training with Collider. [[Paper](https://arxiv.org/pdf/2502.00340)]  
-**Di Chai**, Pengbo Li, Feiyuan Zhang, Yilun Jin, Han Tian, Junxue Zhang, Kai Chen.  
+**Di Chai**, Pengbo Li, Feiyuan Zhang, Yilun Jin, Han Tian, Kaiqiang Xu, Binhang Yuan, Dian Shen, Junxue Zhang, Kai Chen.
 *ICLR'26 (to appear)*
 
 ## Publications
