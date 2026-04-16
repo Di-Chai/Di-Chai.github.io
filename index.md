@@ -4,13 +4,13 @@ I am currently an assistant professor at the [School of Computing and Artificial
 
 Email: chaidi[at]mail[dot]sufe[dot]edu[dot]cn
 
-## Work in Progress
-
-- Enhancing Token Filtering Efficiency in Large Language Model Training with Collider. [[Paper](https://arxiv.org/pdf/2502.00340)]  
-**Di Chai**, Pengbo Li, Feiyuan Zhang, Yilun Jin, Han Tian, Kaiqiang Xu, Binhang Yuan, Dian Shen, Junxue Zhang, Kai Chen.
-*ICLR'26 (to appear)*
+<font color="red">**团队长期招募机器学习系统、人工智能安全方向的硕士与博士同学，如果你对构建数据-算法协同驱动的机器学习系统有着浓厚兴趣或独特看法，欢迎联系我，让我们一起做出世界一流的研究成果！**</font>
 
 ## Publications
+
+- Unlocking Full Efficiency of Token Filtering in Large Language Model Training. [[Paper](https://arxiv.org/pdf/2502.00340)]  
+**Di Chai**, Pengbo Li, Feiyuan Zhang, Yilun Jin, Han Tian, Kaiqiang Xu, Binhang Yuan, Dian Shen, Junxue Zhang, Kai Chen. 
+*ICLR'26 [CCF-A]*
 
 - Efficient Decentralized Federated Singular Vector Decomposition. [[Paper](https://www.usenix.org/conference/atc24/presentation/chai)] [[Code](https://github.com/Di-Chai/Excalibur)]  
 **Di Chai**, Junxue Zhang, Liu Yang, Yilun Jin, Leye Wang, Kai Chen, Qiang Yang.  
