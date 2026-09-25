@@ -1,0 +1,170 @@
+# One record supplies both the paper list and its research highlight / news links.
+# Keep entries newest first within each year. All original papers are retained.
+# 内容维护：复制一条记录即可新增论文，id 不要重复。
+# selected: true = 默认展示在 Publications；false 或省略 = 展开后展示。
+# highlight = Highlighted Projects 的内容；修改其文字可更新亮点，删除整个 highlight 可取消展示。
+# selected 与 highlight 独立；取消研究亮点不会删除论文。完整示例见 README.md。
+- id: canopy
+  title: "Canopy: Tree-Aware Rollout Scheduling for Agent Reinforcement Learning"
+  authors: [Feiyuan Zhang, LI Pengbo, Ziniu Li, Yuhao Jiang, Di Chai, Han Tian, Junhao Wang, Taiqiang Wu, Guanhua Huang, Chaoliang Zeng, Yihao Liu, Kai Chen]
+  year: 2026
+  venue: "NeurIPS 2026 (to appear)"
+  selected: true
+
+- id: prefixflow
+  title: "PrefixFlow: Training-Time KV Caching for Schedule-Level Prefix Reuse in LLM RL Training"
+  authors: [Pengbo Li, Feiyuan Zhang, Guangming Sheng, Guangxin He, Di Chai, Ziniu Li, Taiqiang Wu, Han Tian, Wenyu Mao, Binhang Yuan, Kai Chen]
+  year: 2026
+  venue: "ACM SIGOPS ATC 2026 (to appear)"
+  selected: true
+
+- id: kvmem
+  title: "KVMem: Virtualizing Million-Token Agent Workspaces on a Consumer GPU"
+  authors: [Di Chai, Leye Wang, Zeshen Su, Zhiguo Xia, Zhihang Yu]
+  year: 2026
+  venue: arXiv 2026
+  selected: false
+  paper: https://arxiv.org/pdf/2609.04852
+  code: https://github.com/kvmem/kvmem-llama.cpp
+  video: https://www.bilibili.com/video/BV1r2ey6EEh5/
+  highlight:
+    name: KVMem
+    image:
+      path: assets/img/kvmem-project.png
+      alt: KVMem overview showing a historical agent workspace, tiered KV storage, and a compact active execution view on the GPU.
+    summary: Virtualizes million-token agent workspaces on a consumer GPU, keeping history as reusable KV blocks and retrieving only the context needed for each step.
+    insight: The paper separates the persistent KV workspace from the model's active context window. Query-conditioned retrieval selects relevant historical blocks and assembles a bounded execution view, reusing previously computed KV state instead of repeatedly prefilling recalled text.
+
+- id: centrifuge
+  title: Unlocking Full Efficiency of Token Filtering in Large Language Model Training
+  authors: [Di Chai, Pengbo Li, Feiyuan Zhang, Yilun Jin, Han Tian, Kaiqiang Xu, Binhang Yuan, Dian Shen, Junxue Zhang, Kai Chen]
+  year: 2026
+  venue: ICLR 2026
+  classification: CCF-A
+  selected: true
+  paper: https://arxiv.org/abs/2502.00340
+  code: https://github.com/Di-Chai/Centrifuge
+  proceedings: https://proceedings.iclr.cc/paper_files/paper/2026/hash/d65c4ce22241138c1784ff753d4c746c-Abstract-Conference.html
+  highlight:
+    name: Centrifuge
+    tagline: Efficient token filtering for large language model training
+    topic: LLM training
+    illustration: token-filtering
+    image:
+      path: assets/img/centrifuge-project.png
+      alt: Centrifuge project illustration showing blue and orange tokens passing through a futuristic filtering device.
+    summary: Algorithm–system co-design that turns token filtering into practical training speedups while preserving its model utility benefits.
+    result: Up to 34.7%
+    result_label: less end-to-end training time
+    conditions: At 50% token filtering; maximum across evaluated settings on 1.1B–40B models.
+    insight: Token filtering alone does not guarantee faster training. Centrifuge filters activations in attention backward and transforms sparse GEMM into dimension-reduced dense GEMM, enabling efficient execution with standard machine learning libraries.
+
+- id: uctb
+  title: "UCTB: an urban computing tool box for all-in-one spatiotemporal prediction solution"
+  authors: [Jiangyi Fang, Liyue Chen, Di Chai, Yayao Hong, Xiuhuai Xie, Longbiao Chen, Leye Wang]
+  year: 2025
+  venue: CCF Transactions on Pervasive Computing and Interaction 7(4), 392–412 (2025)
+  selected: true
+  award: Best Paper Award
+  award_image: assets/img/uctb-best-paper-award.jpg
+  paper: https://link.springer.com/article/10.1007/s42486-025-00187-y
+  code: https://github.com/uctb/UCTB
+
+- id: sequoia
+  title: "Sequoia: An Accessible and Extensible Framework for Privacy-Preserving Machine Learning over Distributed Data"
+  authors: [Kaiqiang Xu, Di Chai, Junxue Zhang, Fan Lai, Kai Chen]
+  year: 2025
+  venue: ACM SIGMOD 2025
+  classification: CCF-A
+  selected: true
+  paper: https://dl.acm.org/doi/10.1145/3709742
+
+- id: excalibur
+  title: Efficient Decentralized Federated Singular Vector Decomposition
+  authors: [Di Chai, Junxue Zhang, Liu Yang, Yilun Jin, Leye Wang, Kai Chen, Qiang Yang]
+  year: 2024
+  venue: USENIX ATC 2024
+  classification: CCF-A
+  selected: true
+  paper: https://www.usenix.org/conference/atc24/presentation/chai
+  code: https://github.com/Di-Chai/Excalibur
+
+- id: fedeval
+  title: "A Survey for Federated Learning Evaluations: Goals and Measures"
+  authors: [Di Chai, Leye Wang, Liu Yang, Junxue Zhang, Kai Chen, Qiang Yang]
+  year: 2024
+  venue: IEEE TKDE 2024
+  classification: CCF-A
+  paper: https://ieeexplore.ieee.org/abstract/document/10480259/
+  code: https://github.com/Di-Chai/FedEval
+
+- id: traffic-generalizability
+  title: "Exploring the Generalizability of Spatio-Temporal Traffic Prediction: Meta-Modeling and an Analytic Framework"
+  authors: [Leye Wang, Di Chai, Xuanzhe Liu, Liyue Chen, Kai Chen]
+  year: 2023
+  venue: IEEE TKDE 2023
+  classification: CCF-A
+  paper: https://ieeexplore.ieee.org/document/9627543
+  code: https://github.com/uctb/UCTB
+
+- id: fedsvd
+  title: Practical Lossless Federated Singular Vector Decomposition Over Billion-Scale Data
+  authors: [Di Chai, Leye Wang, Junxue Zhang, Liu Yang, Shuowei Cai, Kai Chen, Qiang Yang]
+  year: 2022
+  venue: ACM SIGKDD 2022
+  classification: CCF-A
+  paper: https://dl.acm.org/doi/10.1145/3534678.3539402
+  code: https://github.com/Di-Chai/FedEval/tree/master/research/FedSVD
+
+- id: sphinx
+  title: "Sphinx: Enabling privacy-preserving online learning over the cloud"
+  authors: [Han Tian, Chaoliang Zeng, Zhenghang Ren, Di Chai, Junxue Zhang, Kai Chen, Qiang Yang]
+  year: 2022
+  venue: IEEE S&P 2022
+  classification: CCF-A
+  paper: https://ieeexplore.ieee.org/abstract/document/9833648
+
+- id: personalized-mask
+  title: Practical and secure federated recommendation with personalized mask
+  authors: [Liu Yang, Junxue Zhang, Di Chai, Leye Wang, Kun Guo, Kai Chen, Qiang Yang]
+  year: 2022
+  venue: FL-IJCAI 2022
+  paper: https://arxiv.org/abs/2109.02464
+
+- id: forward-aggregation
+  title: Secure forward aggregation for vertical federated neural networks
+  authors: [Shuowei Cai, Di Chai, Liu Yang, Junxue Zhang, Yilun Jin, Leye Wang, Kun Guo, Kai Chen]
+  year: 2022
+  venue: FL-IJCAI 2022
+  paper: https://arxiv.org/abs/2207.00165
+
+- id: fedmf
+  title: Secure Federated Matrix Factorization
+  authors: [Di Chai, Leye Wang, Kai Chen, Qiang Yang]
+  year: 2021
+  venue: IEEE Intelligent Systems 2021
+  paper: https://ieeexplore.ieee.org/abstract/document/9162459
+  code: https://github.com/Di-Chai/FedMF
+
+- id: inference-attacks
+  title: Efficient Federated Matrix Factorization against Inference Attacks
+  authors: [Di Chai, Leye Wang, Kai Chen, Qiang Yang]
+  year: 2021
+  venue: ACM TIST 2021
+  paper: https://dl.acm.org/doi/10.1145/3501812
+
+- id: aegis
+  title: "Aegis: A Trusted, Automatic and Accurate Verification Framework for Vertical Federated Learning"
+  authors: [Cengguang Zhang, Junxue Zhang, Di Chai, Kai Chen]
+  year: 2021
+  venue: FL-IJCAI 2021
+  award: Best Application Award
+  paper: https://arxiv.org/abs/2108.06958
+
+- id: bike-flow
+  title: Bike Flow Prediction with Multi-Graph Convolutional Networks
+  authors: [Di Chai, Leye Wang, Qiang Yang]
+  year: 2018
+  venue: ACM SIGSPATIAL 2018
+  paper: https://dl.acm.org/doi/10.1145/3274895.3274896
+  code: https://github.com/uctb/UCTB

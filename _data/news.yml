@@ -1,0 +1,24 @@
+# Display order is explicit; do not invent dates for undated announcements.
+# publication links back to publications.yml; kind chooses paper/proceedings/code.
+- publication: centrifuge
+  kind: paper
+  date: "2026-03-19"
+  date_label: March 19, 2026
+  before: Our updated
+  link_text: Centrifuge manuscript
+  after: is available on arXiv.
+  url: https://arxiv.org/abs/2502.00340v2
+
+- publication: centrifuge
+  kind: proceedings
+  date: "2026"
+  date_label: 2026 · Publication
+  before: Our work on efficient token filtering appears at
+  link_text: ICLR 2026
+  after: "."
+
+- publication: centrifuge
+  kind: code
+  date_label: Open source · Available
+  link_text: Centrifuge code
+  after: includes setup and reproduction instructions.

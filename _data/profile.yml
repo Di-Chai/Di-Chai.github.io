@@ -1,0 +1,32 @@
+name: Di Chai
+role: Assistant Professor
+department: School of Computing and Artificial Intelligence
+institution: Shanghai University of Finance and Economics
+institution_url: https://scai.sufe.edu.cn/
+sufe_profile_url: https://scai.sufe.edu.cn/cd/main.htm
+location: Shanghai, China
+email: chaidi@mail.sufe.edu.cn
+github: https://github.com/Di-Chai
+portrait: /assets/img/di.jpg
+biography: >-
+  My research focuses on <strong>machine learning systems</strong>,
+  with a particular interest in <strong>LLM systems</strong>.
+  I aim to build <strong>high-performance, trustworthy systems with real-world impact</strong>.
+  I received my Ph.D. from HKUST, advised by
+  <a href="https://cse.hkust.edu.hk/~kaichen/">Prof. Kai Chen</a> and
+  <a href="https://cse.hkust.edu.hk/~qyang/">Prof. Qiang Yang</a>.
+collaborations: >-
+  I have also collaborated closely with
+  <a href="https://wangleye.github.io/">Prof. Leye Wang</a> and
+  <a href="https://snowzjx.me/">Prof. Junxue Zhang</a>.
+recruiting: "I am looking for master's and PhD students interested in machine learning systems, particularly LLM systems. Email:"
+interests:
+  - title: Efficient ML systems
+    icon: cpu
+    description: Algorithm–system co-design and LLM training efficiency.
+  - title: Privacy-preserving learning
+    icon: shield
+    description: Secure distributed computation and federated learning.
+  - title: Evaluation & benchmarks
+    icon: chart
+    description: Evaluation goals, measures, and reproducible experimentation.

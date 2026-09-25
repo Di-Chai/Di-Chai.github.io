@@ -1,4 +1,20 @@
 title: Di Chai
-description: Assistant Professor at School of Computing and Artificial Intelligence, Shanghai University of Finance and Economics
-logo: /assets/img/di.jpg
-theme: jekyll-theme-minimal
+description: Assistant Professor at Shanghai University of Finance and Economics. Research in machine learning systems, with a particular interest in LLM systems.
+url: https://di-chai.github.io
+baseurl: ""
+lang: en
+timezone: Asia/Shanghai
+encoding: utf-8
+markdown: kramdown
+permalink: pretty
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - scripts
+  - tests
+  - .bundle
+  - .gitignore
+  - _templates
+  - 更新主页.command

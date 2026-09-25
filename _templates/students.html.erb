@@ -1,0 +1,27 @@
+<details class="students" id="students" tabindex="-1">
+  <summary><strong><%= h(students['title']) %></strong><span class="students-toggle" aria-hidden="true"></span></summary>
+  <div class="students-content">
+  <% unless students['intro'].to_s.empty? -%>
+  <% students['intro'].strip.split(/\n\s*\n/).each do |paragraph| -%>
+  <p class="students-intro"><%= student_intro_text(paragraph) %></p>
+  <% end -%>
+  <% end -%>
+  <% unless students.fetch('directions', []).empty? -%>
+  <div class="student-directions">
+    <% students['directions'].each do |direction| -%>
+    <article class="student-direction"><h3><%= h(direction['title']) %></h3><p><%= h(direction['summary']) %></p></article>
+    <% end -%>
+  </div>
+  <% end -%>
+  <% unless students.fetch('proposals', []).empty? -%>
+  <div class="student-proposals">
+    <h3>Research proposals</h3>
+    <ul>
+      <% students['proposals'].each do |proposal| -%>
+      <li><a href="<%= h(proposal['url']) %>"><%= h(proposal['title']) %> ↗</a><p><%= h(proposal['description']) %></p></li>
+      <% end -%>
+    </ul>
+  </div>
+  <% end -%>
+  </div>
+</details>

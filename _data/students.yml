@@ -1,0 +1,23 @@
+# 招生介绍：可直接编辑本文件，保存后运行“更新主页.command”。
+# intro 用 | 保留段落，空行分段；支持 **加粗**，个人邮箱自动显示为邮件链接。
+title: To Prospective Students
+intro: |
+  I am looking for master's and PhD students with **strong computer science fundamentals** and a **genuine passion for building systems**. You should enjoy understanding how systems work, turning ideas into working implementations, and investigating why something fails or performs poorly.
+
+  **I value learning ability and curiosity more than extensive prior research experience.** What matters is your willingness to tackle unfamiliar problems: learning the concepts and tools you need, asking thoughtful questions, and testing ideas through careful reasoning and experimentation. I appreciate students who take initiative and revise their assumptions when the evidence calls for it.
+
+  Please email **chaidi@mail.sufe.edu.cn** with a brief introduction to your background and interests. You are welcome to share a project you have built or a technical problem you enjoyed solving—from coursework, personal exploration, open-source contributions, or research. I would like to hear how you approached it and what you learned.
+
+# 研究方向：在 directions 下按下面的格式添加条目，替换 directions: []。
+# directions:
+#   - title: 研究方向名称
+#     summary: 介绍研究问题、切入点与适合的学生背景。
+directions: []
+
+# Proposal：在 proposals 下添加条目，替换 proposals: []。
+# url 可以是完整网址，或 assets/pdf/ 下已存在的 PDF 相对路径。
+# proposals:
+#   - title: Proposal 标题
+#     description: 简述研究问题与目标。
+#     url: assets/pdf/project-proposal.pdf
+proposals: []

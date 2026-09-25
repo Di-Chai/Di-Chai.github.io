@@ -1,0 +1,36 @@
+<% highlight = paper['highlight'] -%>
+<article class="research-update<%= highlight['image'] ? ' has-image' : '' %>" aria-labelledby="highlight-<%= h(paper['id']) %>">
+  <div class="update-heading"><h3 id="highlight-<%= h(paper['id']) %>"><%= h(highlight['name']) %></h3><span><%= h(paper['venue']) %><%= paper['code'] ? ' · Open source' : '' %></span></div>
+  <div class="update-media">
+    <% unless highlight['image'] -%><div class="update-year"><%= h(paper['year']) %></div><% end -%>
+    <% if highlight['image'] -%>
+    <% visual = highlight['image']; image_path = local_asset(visual['path']) -%>
+    <figure class="update-figure">
+      <a class="update-image-link" href="<%= h(image_path) %>" aria-label="View <%= h(highlight['name']) %> image at full size">
+        <img src="<%= h(image_path) %>" alt="<%= h(visual['alt']) %>" loading="lazy" decoding="async">
+      </a>
+      <% unless visual['caption'].to_s.empty? -%>
+      <figcaption><% if visual['source'] -%><a href="<%= h(visual['source']) %>"><%= h(visual['caption']) %> ↗</a><% else -%><%= h(visual['caption']) %><% end -%></figcaption>
+      <% end -%>
+    </figure>
+    <% end -%>
+  </div>
+  <div class="update-content">
+    <p class="update-summary"><%= h(highlight['summary']) %></p>
+    <div class="update-actions">
+      <% if paper['paper'] -%><a href="<%= h(paper['paper']) %>">Paper ↗</a><% end -%>
+      <% if paper['code'] -%><a href="<%= h(paper['code']) %>">Code ↗</a><% end -%>
+      <% if paper['video'] -%><a href="<%= h(paper['video']) %>">Tutorial video ↗</a><% end -%>
+      <% if highlight['insight'] || highlight['result'] -%>
+      <details class="research-details">
+        <summary>Research insight</summary>
+        <div class="insight">
+          <% if highlight['insight'] -%><p><%= h(highlight['insight']) %></p><% end -%>
+          <% if highlight['result'] -%><p><%= h(highlight['result']) %> <%= h(highlight['result_label']) %>. <%= h(highlight['conditions']) %></p><% end -%>
+          <% if paper['proceedings'] -%><p><a href="<%= h(paper['proceedings']) %>">Conference abstract ↗</a></p><% end -%>
+        </div>
+      </details>
+      <% end -%>
+    </div>
+  </div>
+</article>

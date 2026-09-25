@@ -1,0 +1,20 @@
+<article class="paper" id="paper-<%= h(paper['id']) %>">
+  <div class="paper-year"><%= h(paper['year']) %></div>
+  <div>
+    <h3><% if paper['paper'] %><a href="<%= h(paper['paper']) %>"><%= h(paper['title']) %></a><% else %><%= h(paper['title']) %><% end %></h3>
+    <p class="paper-authors"><%= paper['authors'].map { |author| author == profile['name'] ? "<strong>#{h(author)}</strong>" : h(author) }.join(', ') %></p>
+    <div class="paper-links">
+      <span class="paper-venue"><%= h(paper['venue']) %></span>
+      <% if paper['paper'] -%><a href="<%= h(paper['paper']) %>" aria-label="Paper: <%= h(paper['title']) %>">Paper</a><% end -%>
+      <% if paper['code'] -%><a href="<%= h(paper['code']) %>" aria-label="Code: <%= h(paper['title']) %>">Code</a><% end -%>
+      <% if paper['video'] -%><a href="<%= h(paper['video']) %>" aria-label="Tutorial video: <%= h(paper['title']) %>">Tutorial video</a><% end -%>
+      <% if paper['award'] -%>
+      <% if paper['award_image'] -%>
+      <a class="award award-image-link" href="<%= h(local_asset(paper['award_image'])) %>" data-image-alt="<%= h(paper['award']) %> certificate for <%= h(paper['title']) %>"><%= h(paper['award']) %></a>
+      <% else -%>
+      <span class="award"><%= h(paper['award']) %></span>
+      <% end -%>
+      <% end -%>
+    </div>
+  </div>
+</article>
