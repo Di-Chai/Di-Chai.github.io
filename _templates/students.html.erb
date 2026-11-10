@@ -1,27 +1,47 @@
-<details class="students" id="students" tabindex="-1">
-  <summary><strong><%= h(students['title']) %></strong><span class="students-toggle" aria-hidden="true"></span></summary>
-  <div class="students-content">
-  <% unless students['intro'].to_s.empty? -%>
-  <% students['intro'].strip.split(/\n\s*\n/).each do |paragraph| -%>
-  <p class="students-intro"><%= student_intro_text(paragraph) %></p>
-  <% end -%>
-  <% end -%>
-  <% unless students.fetch('directions', []).empty? -%>
-  <div class="student-directions">
-    <% students['directions'].each do |direction| -%>
-    <article class="student-direction"><h3><%= h(direction['title']) %></h3><p><%= h(direction['summary']) %></p></article>
+<section class="section students" id="students" tabindex="-1" aria-labelledby="students-title">
+  <div class="section-heading"><h2 id="students-title"><%= h(students['title']) %></h2></div>
+  <% looking_for = student_paragraphs(students['looking_for']) -%>
+  <% unless looking_for.empty? -%>
+  <div class="students-block">
+    <h3>Who I'm looking for</h3>
+    <% looking_for.each do |paragraph| -%>
+    <p class="students-text"><%= paragraph %></p>
     <% end -%>
   </div>
   <% end -%>
-  <% unless students.fetch('proposals', []).empty? -%>
-  <div class="student-proposals">
-    <h3>Research proposals</h3>
-    <ul>
-      <% students['proposals'].each do |proposal| -%>
-      <li><a href="<%= h(proposal['url']) %>"><%= h(proposal['title']) %> ↗</a><p><%= h(proposal['description']) %></p></li>
+  <% directions = students.fetch('directions', []); proposals = students.fetch('proposals', []) -%>
+  <% unless directions.empty? && proposals.empty? -%>
+  <div class="students-block">
+    <h3>What you'll work on</h3>
+    <% unless directions.empty? -%>
+    <div class="student-directions">
+      <% directions.each do |direction| -%>
+      <article class="student-direction"><h4><%= h(direction['title']) %></h4><p><%= h(direction['summary']) %></p></article>
       <% end -%>
-    </ul>
+    </div>
+    <% end -%>
+    <% unless proposals.empty? -%>
+    <div class="student-proposals">
+      <h4>Research proposals</h4>
+      <ul>
+        <% proposals.each do |proposal| -%>
+        <li><a href="<%= h(proposal['url']) %>"><%= h(proposal['title']) %> ↗</a><p><%= h(proposal['description']) %></p></li>
+        <% end -%>
+      </ul>
+    </div>
+    <% end -%>
   </div>
   <% end -%>
+  <div class="students-block">
+    <h3>How to apply</h3>
+    <% student_paragraphs(students['how_to_apply']).each do |paragraph| -%>
+    <p class="students-text"><%= paragraph %></p>
+    <% end -%>
+    <div class="apply-actions">
+      <% unless students['email_subject'].to_s.strip.empty? -%>
+      <p class="apply-subject">Suggested subject line: <code><%= h(students['email_subject'].strip) %></code></p>
+      <% end -%>
+      <a class="button" href="<%= h(student_mailto) %>">Email me</a>
+    </div>
   </div>
-</details>
+</section>

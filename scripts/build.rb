@@ -15,7 +15,10 @@ class HomePage
     @profile = read_yaml('_data/profile.yml')
     @students = read_yaml('_data/students.yml')
     raise 'students.yml needs a title' unless students.is_a?(Hash) && students['title'].is_a?(String) && !students['title'].strip.empty?
-    raise 'Student intro must be text' unless students['intro'].nil? || students['intro'].is_a?(String)
+    raise 'students.yml: intro has been split into looking_for and how_to_apply' if students.key?('intro')
+    %w[looking_for how_to_apply email_subject].each do |field|
+      raise "Student #{field} must be text" unless students[field].nil? || students[field].is_a?(String)
+    end
     { 'directions' => %w[title summary], 'proposals' => %w[title description url] }.each do |section, fields|
       entries = students.fetch(section, [])
       raise "Student #{section} must be a list" unless entries.is_a?(Array)
@@ -45,6 +48,9 @@ class HomePage
       end
       if paper.key?('paper') && !(paper['paper'].is_a?(String) && paper['paper'].match?(%r{\Ahttps?://}i))
         raise "paper must be an HTTP(S) URL when provided: #{paper['id']}"
+      end
+      if paper.key?('classification') && !(paper['classification'].is_a?(String) && !paper['classification'].strip.empty?)
+        raise "classification must be text such as CCF-A: #{paper['id']}"
       end
       if paper['video'] && !(paper['video'].is_a?(String) && paper['video'].match?(%r{\Ahttps?://}i))
         raise "video must be an HTTP(S) URL: #{paper['id']}"
@@ -81,10 +87,28 @@ class HomePage
     CGI.escapeHTML(value.to_s)
   end
 
-  def student_intro_text(value)
+  # Email links in the student section pre-fill the suggested subject line.
+  def student_mailto
+    subject = students['email_subject'].to_s.strip
+    "mailto:#{profile['email']}" + (subject.empty? ? '' : "?subject=#{ERB::Util.url_encode(subject)}")
+  end
+
+  def student_text(value)
     email = h(profile['email'])
     h(value).gsub(/\*\*(.+?)\*\*/, '<strong>\1</strong>')
-      .gsub(email) { "<a href=\"mailto:#{email}\">#{email}</a>" }
+      .gsub(email) { "<a href=\"#{h(student_mailto)}\">#{email}</a>" }
+  end
+
+  def student_paragraphs(value)
+    value.to_s.strip.split(/\n\s*\n/).map { |paragraph| student_text(paragraph) }
+  end
+
+  def classification_badge(paper)
+    value = paper['classification'].to_s.strip
+    return '' if value.empty?
+    rank = value[/\ACCF-([ABC])\z/, 1]
+    title = rank ? %( title="China Computer Federation (CCF) recommended venue, class #{rank}") : ''
+    %(<span class="badge badge-rank"#{title}>#{h(value)}</span>)
   end
 
   def local_asset(path)

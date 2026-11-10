@@ -4,11 +4,13 @@
 # selected: true = 默认展示在 Publications；false 或省略 = 展开后展示。
 # highlight = Highlighted Projects 的内容；修改其文字可更新亮点，删除整个 highlight 可取消展示。
 # selected 与 highlight 独立；取消研究亮点不会删除论文。完整示例见 README.md。
+# classification（如 CCF-A）会在会议名称旁显示为徽章；不确定时省略即可。
 - id: canopy
   title: "Canopy: Tree-Aware Rollout Scheduling for Agent Reinforcement Learning"
   authors: [Feiyuan Zhang, LI Pengbo, Ziniu Li, Yuhao Jiang, Di Chai, Han Tian, Junhao Wang, Taiqiang Wu, Guanhua Huang, Chaoliang Zeng, Yihao Liu, Kai Chen]
   year: 2026
   venue: "NeurIPS 2026 (to appear)"
+  classification: CCF-A
   selected: true
 
 - id: prefixflow

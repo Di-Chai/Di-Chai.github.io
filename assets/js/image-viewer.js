@@ -19,7 +19,7 @@
       opener = link;
       image.src = link.href;
       image.alt = description;
-      const name = link.closest('article').querySelector('h3').textContent;
+      const name = link.closest('article').querySelector('h3, h4').textContent;
       viewer.setAttribute('aria-label', `${name} image preview`);
       viewer.showModal();
       document.documentElement.classList.add('image-viewer-open');

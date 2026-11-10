@@ -1,6 +1,6 @@
 <% highlight = paper['highlight'] -%>
 <article class="research-update<%= highlight['image'] ? ' has-image' : '' %>" aria-labelledby="highlight-<%= h(paper['id']) %>">
-  <div class="update-heading"><h3 id="highlight-<%= h(paper['id']) %>"><%= h(highlight['name']) %></h3><span><%= h(paper['venue']) %><%= paper['code'] ? ' · Open source' : '' %></span></div>
+  <div class="update-heading"><h3 id="highlight-<%= h(paper['id']) %>"><%= h(highlight['name']) %></h3><span><%= h(paper['venue']) %> <%= classification_badge(paper) %><%= paper['code'] ? ' · Open source' : '' %></span></div>
   <div class="update-media">
     <% unless highlight['image'] -%><div class="update-year"><%= h(paper['year']) %></div><% end -%>
     <% if highlight['image'] -%>

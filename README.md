@@ -34,13 +34,14 @@ ruby scripts/build.rb --check
 
 | 文件 | 内容 |
 | --- | --- |
-| `_data/profile.yml` | 个人简介、联系方式、SUFE 教师页链接与招生提示 |
-| `_data/students.yml` | To Prospective Students 的介绍、研究方向与 proposal 链接 |
-| `_data/publications.yml` | 全部论文、作者、会议、论文/代码链接，以及 `highlight` 研究亮点 |
+| `_data/profile.yml` | 个人简介、联系方式、SUFE 教师页链接与招生横幅（`recruiting`） |
+| `_data/students.yml` | To Prospective Students：招生要求、研究方向卡片、申请方式、建议邮件标题与 proposal 链接 |
+| `_data/publications.yml` | 全部论文、作者、会议、CCF 等级徽章、论文/代码链接，以及 `highlight` 研究亮点 |
 | `_templates/home.html.erb` | 页面结构、个人介绍、搜索与分享元数据 |
 | `_templates/highlight.html.erb` | Highlighted Projects 的紧凑条目 |
-| `_templates/publication.html.erb` | 论文条目 |
-| `_templates/students.html.erb` | 学生介绍区域 |
+| `_templates/publication-list.html.erb` | 按年份分组的论文列表 |
+| `_templates/publication.html.erb` | 论文条目（会议、徽章与链接按钮） |
+| `_templates/students.html.erb` | To Prospective Students 区域（三块：要求 / 研究方向 / 申请方式） |
 | `assets/css/main.css` | 页面样式、字号和手机布局 |
 | `assets/js/navigation.js` | 页内目录当前位置、吸顶高度适配 |
 | `assets/js/image-viewer.js` | 项目配图的页内放大、关闭与焦点恢复 |
@@ -50,7 +51,9 @@ ruby scripts/build.rb --check
 ### 新增论文
 
 向 `_data/publications.yml` 添加一条记录。`id` 必须唯一，使用小写字母、数字与短横线；`authors` 保留论文的原始署名顺序。
-页面按年份倒序显示，同一年内沿用数据文件的顺序。`selected: true` 的论文默认展示；设为 `false` 或省略时，在 All publications 内展开。如果没有选择任何精选论文，页面直接展示完整列表。
+页面按年份倒序分组显示，每个年份只在该组第一篇论文旁出现一次，同一年内沿用数据文件的顺序。`selected: true` 的论文显示在 Selected Publications 中；设为 `false` 或省略时，点击 All publications（显示论文总数）后在 More publications 中展开。如果没有选择任何精选论文，标题改为 Publications 并直接展示完整列表。
+
+可选的 `classification` 会在会议名称旁显示为徽章，例如 `CCF-A`；填写 `CCF-A`、`CCF-B` 或 `CCF-C` 时，鼠标悬停会显示说明。不确定等级时省略即可。`award` 显示为带奖杯图标的徽章。
 
 ```yaml
 - id: project-id
@@ -58,6 +61,7 @@ ruby scripts/build.rb --check
   authors: [Di Chai, Another Author]
   year: 2026
   venue: Conference 2026
+  classification: CCF-A
   selected: true
   paper: https://example.com/paper
   code: https://github.com/example/project
@@ -103,26 +107,37 @@ ruby scripts/build.rb --check
 
 ### 更新 To Prospective Students
 
-编辑 `_data/students.yml`。`intro` 写招生理念和联系说明，空行分段，支持 `**加粗**`，个人邮箱自动显示为邮件链接；`directions` 列出研究方向，`proposals` 放详细计划或 PDF 链接。入口在 Recruiting students 下一行，与招生提示共用上下两条横线；默认收起，点击标题展开，再次点击收起。研究方向和 proposal 列表暂为空，可后续补充。
+简介下方是招生横幅：文字来自 `_data/profile.yml` 的 `recruiting`，右侧的 **Join my group** 按钮跳到 To Prospective Students 区域。删除 `recruiting` 即隐藏横幅。
+
+To Prospective Students 在 Highlighted Projects 与 Publications 之间，默认展开，分为三块，内容都在 `_data/students.yml`：
+
+- **Who I'm looking for**：`looking_for`，招生理念与对学生的期待。
+- **What you'll work on**：`directions` 中的每个研究方向显示为一张卡片；`proposals` 的链接显示在卡片下方。两者都为空时整块隐藏。
+- **How to apply**：`how_to_apply`，申请方式说明。`email_subject` 会显示为建议的邮件标题，并在 **Email me** 按钮和本区域的邮箱链接中自动预填；删除这一行即不显示。
+
+`looking_for` 与 `how_to_apply` 空行分段，支持 `**加粗**`，个人邮箱自动显示为邮件链接。旧版的 `intro` 字段已拆分为这两项，生成时如果仍有 `intro` 会提示修改。
 
 ```yaml
 title: To Prospective Students
-intro: |
-  在这里介绍你的研究理念、招生方向和对学生的期待。
+looking_for: |
+  在这里介绍你的研究理念和对学生的期待。
 
   可以继续写第二段。
 directions:
   - title: 研究方向名称
-    summary: 说明研究问题与切入点。
+    summary: 说明研究问题、切入点与相关成果。
+how_to_apply: |
+  说明如何联系你、邮件里应包含什么。
+email_subject: "[Prospective Student] Your Name - Master's or PhD - Entry Year"
 proposals:
   - title: Proposal 标题
     description: 简述计划要解决的问题。
     url: https://example.com/proposal
 ```
 
-本地 PDF 放在 `assets/pdf/`，`url` 填写 `assets/pdf/实际文件名.pdf`。生成时会检查本地文件是否存在。暂时没有条目时保留 `directions: []` 或 `proposals: []`，对应列表不显示。
+本地 PDF 放在 `assets/pdf/`，`url` 填写 `assets/pdf/实际文件名.pdf`。生成时会检查本地文件是否存在。暂时没有 proposal 时保留 `proposals: []`。
 
-顶部是左对齐的页内目录：**About / Hiring / Projects / Publications**，点击会定位到对应区域。Hiring 指向简介下方的招生说明。滚动时当前栏目自动标蓝；手机上导航会换行，定位会避开吸顶栏。Projects 指向 Highlighted Projects。没有研究亮点时会自动隐藏 Projects 导航。招生内容仍在简介下方展开。
+顶部是左对齐的页内目录：**About / Projects / Join Us / Publications**，顺序与页面区域一致，点击会定位到对应区域；Join Us 指向 To Prospective Students。滚动时当前栏目自动标蓝；手机上导航会换行，定位会避开吸顶栏。没有研究亮点时会自动隐藏 Projects 导航。旧链接 `#hiring` 仍然有效，会定位到招生横幅。
 
 右上角是单个颜色切换按钮：浅色显示太阳，深色显示月亮，点击切换到另一种模式。首次访问默认跟随 macOS 等操作系统的颜色偏好并实时响应变化；手动切换后会记住当前浏览器的选择。主题逻辑在 `assets/js/theme.js`，配色变量在 `assets/css/main.css`，打印始终使用浅色。
 

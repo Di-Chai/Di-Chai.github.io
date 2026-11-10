@@ -27,10 +27,10 @@
     <nav class="nav" aria-label="Page sections">
       <div class="nav-links">
       <a href="#about" aria-current="location">About</a>
-      <a href="#hiring">Hiring</a>
       <% if papers.any? { |paper| paper['highlight'] } -%>
       <a href="#research">Projects</a>
       <% end -%>
+      <a href="#students">Join Us</a>
       <a href="#publications">Publications</a>
       </div>
       <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode" hidden>
@@ -61,12 +61,12 @@
           </div>
         </div>
       </section>
-      <div class="recruitment" id="hiring" tabindex="-1" aria-label="Hiring">
-        <% unless profile['recruiting'].to_s.empty? -%>
-        <p class="recruit" lang="en"><strong>Recruiting students</strong><%= h(profile['recruiting']) %> <a href="mailto:<%= h(profile['email']) %>"><%= h(profile['email']) %></a></p>
-        <% end -%>
-        <%= render('students') %>
-      </div>
+      <% unless profile['recruiting'].to_s.empty? -%>
+      <aside class="recruit-banner" id="hiring" aria-label="Recruiting students">
+        <p><strong>Recruiting students.</strong> <%= h(profile['recruiting']) %></p>
+        <a class="button" href="#students">Join my group <span aria-hidden="true">→</span></a>
+      </aside>
+      <% end -%>
       <% highlights = papers.select { |paper| paper['highlight'] } -%>
       <% unless highlights.empty? -%>
       <section class="section research" id="research" tabindex="-1" aria-labelledby="research-title">
@@ -76,20 +76,18 @@
         <% end -%>
       </section>
       <% end -%>
+      <%= render('students') %>
       <% selected = papers.select { |paper| paper['selected'] } -%>
       <% remaining = papers.reject { |paper| paper['selected'] } -%>
       <section class="section publications" id="publications" tabindex="-1" aria-labelledby="publications-title">
-        <div class="section-heading"><h2 id="publications-title">Publications</h2></div>
-        <% (selected.empty? ? papers : selected).each do |paper| -%>
-        <%= render('publication', paper: paper) %>
-        <% end -%>
+        <div class="section-heading"><h2 id="publications-title"><%= selected.empty? ? 'Publications' : 'Selected Publications' %></h2></div>
+        <%= render('publication-list', list: selected.empty? ? papers : selected) %>
         <% unless selected.empty? || remaining.empty? -%>
         <details class="all-publications">
-          <summary><span class="when-closed">All publications</span><span class="when-open">Show selected publications</span></summary>
+          <summary><span class="when-closed">All publications (<%= papers.size %>)</span><span class="when-open">Show selected publications only</span></summary>
           <div class="other-publications">
-            <% remaining.each do |paper| -%>
-            <%= render('publication', paper: paper) %>
-            <% end -%>
+            <p class="more-publications-label">More publications</p>
+            <%= render('publication-list', list: remaining) %>
           </div>
         </details>
         <% end -%>

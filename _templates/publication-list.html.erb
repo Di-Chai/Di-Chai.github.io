@@ -1,0 +1,10 @@
+<% list.group_by { |paper| paper['year'] }.each do |year, group| -%>
+<div class="pub-year-group">
+  <h3 class="pub-year"><%= h(year) %></h3>
+  <div class="pub-year-papers">
+    <% group.each do |paper| -%>
+    <%= render('publication', paper: paper) %>
+    <% end -%>
+  </div>
+</div>
+<% end -%>
