@@ -43,7 +43,7 @@ ruby scripts/build.rb --check
 | `_templates/publication-list.html.erb` | 按年份分组的论文列表 |
 | `_templates/publication.html.erb` | 论文条目（会议、徽章与链接按钮） |
 | `_templates/news.html.erb` | News 区域（最新 5 条与折叠的 Earlier news） |
-| `_templates/news-item.html.erb` | 单条动态（图标、年月与内容） |
+| `_templates/news-item.html.erb` | 单条动态（图标、月份与内容） |
 | `_templates/students.html.erb` | To Prospective Students 区域（三块：要求 / 研究方向 / 申请方式） |
 | `assets/css/main.css` | 页面样式、字号和手机布局 |
 | `assets/js/navigation.js` | 页内目录当前位置、吸顶高度适配 |
@@ -118,7 +118,7 @@ ruby scripts/build.rb --check
   text: "[Canopy](#paper-canopy), on tree-aware rollout scheduling for agent reinforcement learning, accepted to **NeurIPS 2026**."
 ```
 
-- `date` 必须加引号，写成 `"YYYY-MM"` 或 `"YYYY-MM-DD"`，页面只显示年月（如 2026.09）。不确定具体日期时只写到月份。
+- `date` 必须加引号，写成 `"YYYY-MM"` 或 `"YYYY-MM-DD"`，页面只显示月份（如 Sep 2026）。不确定具体日期时只写到月份。
 - `type` 决定每条前面的图标：`accepted` 🎉 论文录用、`award` 🏆 获奖、`preprint` 📝 预印本/新论文、`release` 🚀 开源/发布、`talk` 🎤 报告/讲座、`news` 📢 其他（省略 `type` 时默认）。写错类型时生成会提示可选值。
 - 想用其他图标时，加 `icon: "🎊"` 直接指定任意一个 emoji，会覆盖 `type` 的图标。
 - 按月份倒序显示；同一个月内保持文件中的顺序，把较新的写在上面。

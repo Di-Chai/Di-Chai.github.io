@@ -9,6 +9,7 @@ require 'digest'
 class HomePage
   attr_reader :profile, :papers, :config, :students, :news
 
+  MONTHS = %w[Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec].freeze
   # News `type` picks the icon; an item's own `icon` (any emoji) overrides it.
   NEWS_ICONS = {
     'accepted' => "\u{1F389}", # party popper
@@ -146,7 +147,8 @@ class HomePage
   end
 
   def news_month(item)
-    item['date'][0, 7].tr('-', '.')
+    year, month = item['date'].split('-')
+    "#{MONTHS[month.to_i - 1]} #{year}"
   end
 
   def news_icon(item)
