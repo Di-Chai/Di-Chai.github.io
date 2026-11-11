@@ -5,6 +5,7 @@
 # highlight = Highlighted Projects 的内容；修改其文字可更新亮点，删除整个 highlight 可取消展示。
 # selected 与 highlight 独立；取消研究亮点不会删除论文。完整示例见 README.md。
 # classification（如 CCF-A）会在会议名称旁显示为徽章；不确定时省略即可。
+# 当前等级按《中国计算机学会推荐国际学术会议和期刊目录》2026 年版核对（2026-11）；workshop、arXiv 与未收录的期刊不加。
 - id: canopy
   title: "Canopy: Tree-Aware Rollout Scheduling for Agent Reinforcement Learning"
   authors: [Feiyuan Zhang, LI Pengbo, Ziniu Li, Yuhao Jiang, Di Chai, Han Tian, Junhao Wang, Taiqiang Wu, Guanhua Huang, Chaoliang Zeng, Yihao Liu, Kai Chen]
@@ -18,6 +19,7 @@
   authors: [Pengbo Li, Feiyuan Zhang, Guangming Sheng, Guangxin He, Di Chai, Ziniu Li, Taiqiang Wu, Han Tian, Wenyu Mao, Binhang Yuan, Kai Chen]
   year: 2026
   venue: "ACM SIGOPS ATC 2026 (to appear)"
+  classification: CCF-A
   selected: true
   paper: https://arxiv.org/abs/2606.01143
 
@@ -67,6 +69,7 @@
   authors: [Jiangyi Fang, Liyue Chen, Di Chai, Yayao Hong, Xiuhuai Xie, Longbiao Chen, Leye Wang]
   year: 2025
   venue: CCF Transactions on Pervasive Computing and Interaction 7(4), 392–412 (2025)
+  classification: CCF-B
   selected: true
   award: Best Paper Award
   award_image: assets/img/uctb-best-paper-award.jpg
@@ -100,6 +103,15 @@
   classification: CCF-A
   paper: https://ieeexplore.ieee.org/abstract/document/10480259/
   code: https://github.com/Di-Chai/FedEval
+
+- id: uctb-sse
+  title: "UCTB: An Urban Computing Tool Box for Building Spatiotemporal Prediction Services"
+  authors: [Jiangyi Fang, Liyue Chen, Di Chai, Yayao Hong, Xiuhuai Xie, Longbiao Chen, Leye Wang]
+  year: 2024
+  venue: IEEE SSE 2024
+  classification: CCF-C
+  paper: https://doi.org/10.1109/SSE62657.2024.00020
+  code: https://github.com/uctb/UCTB
 
 - id: traffic-generalizability
   title: "Exploring the Generalizability of Spatio-Temporal Traffic Prediction: Meta-Modeling and an Analytic Framework"
@@ -154,6 +166,7 @@
   authors: [Di Chai, Leye Wang, Kai Chen, Qiang Yang]
   year: 2021
   venue: ACM TIST 2021
+  classification: CCF-C
   paper: https://dl.acm.org/doi/10.1145/3501812
 
 - id: aegis
@@ -169,5 +182,6 @@
   authors: [Di Chai, Leye Wang, Qiang Yang]
   year: 2018
   venue: ACM SIGSPATIAL 2018
+  classification: CCF-C
   paper: https://dl.acm.org/doi/10.1145/3274895.3274896
   code: https://github.com/uctb/UCTB
