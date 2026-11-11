@@ -16,7 +16,18 @@
     <% unless directions.empty? -%>
     <div class="student-directions">
       <% directions.each do |direction| -%>
-      <article class="student-direction"><h4><%= h(direction['title']) %></h4><p><%= h(direction['summary']) %></p></article>
+      <article class="student-direction">
+        <h4><%= h(direction['title']) %></h4>
+        <% if direction['summary'] -%><p><%= h(direction['summary']) %></p><% end -%>
+        <% aspects = direction.fetch('aspects', []) -%>
+        <% unless aspects.empty? -%>
+        <ul class="direction-aspects">
+          <% aspects.each do |aspect| -%>
+          <li><%= h(aspect) %></li>
+          <% end -%>
+        </ul>
+        <% end -%>
+      </article>
       <% end -%>
     </div>
     <% end -%>

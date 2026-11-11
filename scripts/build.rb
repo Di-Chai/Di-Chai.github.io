@@ -19,7 +19,15 @@ class HomePage
     %w[looking_for how_to_apply email_subject].each do |field|
       raise "Student #{field} must be text" unless students[field].nil? || students[field].is_a?(String)
     end
-    { 'directions' => %w[title summary], 'proposals' => %w[title description url] }.each do |section, fields|
+    text = ->(value) { value.is_a?(String) && !value.strip.empty? }
+    students.fetch('directions', []).each do |direction|
+      raise 'Student direction needs a title' unless direction.is_a?(Hash) && text.call(direction['title'])
+      raise "Student direction summary must be text: #{direction['title']}" unless direction['summary'].nil? || text.call(direction['summary'])
+      aspects = direction.fetch('aspects', [])
+      raise "Student direction aspects must be a list of text: #{direction['title']}" unless aspects.is_a?(Array) && aspects.all?(&text)
+      raise "Student direction needs a summary or aspects: #{direction['title']}" if direction['summary'].nil? && aspects.empty?
+    end
+    { 'directions' => %w[title], 'proposals' => %w[title description url] }.each do |section, fields|
       entries = students.fetch(section, [])
       raise "Student #{section} must be a list" unless entries.is_a?(Array)
       entries.each do |entry|

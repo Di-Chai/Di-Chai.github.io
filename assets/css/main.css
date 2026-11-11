@@ -159,6 +159,9 @@ body { margin: 0; background: var(--background); color: var(--ink); }
 .student-direction { padding: 14px 16px 16px; background: var(--surface); border: 1px solid var(--line); border-top: 3px solid var(--blue); border-radius: 8px; }
 .site-shell .student-direction h4 { font-size: 16px; line-height: 1.4; font-weight: 600; }
 .site-shell .student-direction p { margin-top: 6px; color: var(--muted); font-size: 14px; line-height: 1.6; }
+.direction-aspects { display: grid; gap: 8px; margin: 10px 0 0; padding: 0; list-style: none; }
+.direction-aspects li { position: relative; padding-left: 20px; font-size: 15px; line-height: 1.6; }
+.direction-aspects li::before { content: ''; position: absolute; left: 5px; top: .62em; width: 7px; height: 7px; border-radius: 50%; background: var(--blue); }
 .apply-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; margin-top: 16px; }
 .site-shell .apply-subject { color: var(--muted); font-size: 14px; }
 .apply-subject code { display: inline-block; margin-left: 4px; padding: 3px 9px; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 6px; font: 500 13px/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; overflow-wrap: anywhere; }

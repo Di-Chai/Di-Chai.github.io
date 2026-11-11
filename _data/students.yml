@@ -9,13 +9,14 @@ looking_for: |
   **I value learning ability and curiosity more than extensive prior research experience.** What matters is your willingness to tackle unfamiliar problems: learning the concepts and tools you need, asking thoughtful questions, and testing ideas through careful reasoning and experimentation. I appreciate students who take initiative and revise their assumptions when the evidence calls for it.
 
 # 研究方向：每个方向显示为一张卡片，按此顺序排列。写 directions: [] 可隐藏整块。
+# title 必填；summary 是一句说明或引导语；aspects 是可选的具体课题列表，按顺序显示为要点。summary 与 aspects 至少填一项。
 directions:
-  - title: Efficient LLM training
-    summary: Make training large language models faster and cheaper by co-designing algorithms and systems — for example, turning token filtering into real speedups (Centrifuge, ICLR 2026) and reusing KV caches during RL training (PrefixFlow, ATC 2026).
-  - title: Systems for LLM agents
-    summary: Build the infrastructure that lets agents train and run at scale — for example, scheduling rollouts for agent reinforcement learning (Canopy, NeurIPS 2026) and running million-token agent workspaces on a single consumer GPU (KVMem).
-  - title: Trustworthy, privacy-preserving ML systems
-    summary: Make learning over distributed data secure and verifiable without giving up performance — for example, privacy-preserving machine learning frameworks (Sequoia, SIGMOD 2025) and federated matrix decomposition (Excalibur, ATC 2024).
+  - title: Building high-performance LLM systems
+    summary: "Topics include, but are not limited to:"
+    aspects:
+      - High-performance, compaction-free KV-cache management for long-horizon agent systems
+      - High-performance inference systems for resource-constrained environments
+      - High-performance LLM cascade systems
 
 how_to_apply: |
   Please email **chaidi@mail.sufe.edu.cn** with a brief introduction to your background and interests. You are welcome to share a project you have built or a technical problem you enjoyed solving—from coursework, personal exploration, open-source contributions, or research. I would like to hear how you approached it and what you learned.

@@ -112,7 +112,7 @@ ruby scripts/build.rb --check
 To Prospective Students 在 Highlighted Projects 与 Publications 之间，默认展开，分为三块，内容都在 `_data/students.yml`：
 
 - **Who I'm looking for**：`looking_for`，招生理念与对学生的期待。
-- **What you'll work on**：`directions` 中的每个研究方向显示为一张卡片；`proposals` 的链接显示在卡片下方。两者都为空时整块隐藏。
+- **What you'll work on**：`directions` 中的每个研究方向显示为一张卡片：`title` 必填，`summary` 是一句说明或引导语，可选的 `aspects` 列出具体课题并显示为要点；`summary` 与 `aspects` 至少填一项。`proposals` 的链接显示在卡片下方。两者都为空时整块隐藏。
 - **How to apply**：`how_to_apply`，申请方式说明。`email_subject` 会显示为建议的邮件标题，并在 **Email me** 按钮和本区域的邮箱链接中自动预填；删除这一行即不显示。
 
 `looking_for` 与 `how_to_apply` 空行分段，支持 `**加粗**`，个人邮箱自动显示为邮件链接。旧版的 `intro` 字段已拆分为这两项，生成时如果仍有 `intro` 会提示修改。
@@ -125,7 +125,10 @@ looking_for: |
   可以继续写第二段。
 directions:
   - title: 研究方向名称
-    summary: 说明研究问题、切入点与相关成果。
+    summary: "Topics include, but are not limited to:"
+    aspects:
+      - 具体课题一
+      - 具体课题二
 how_to_apply: |
   说明如何联系你、邮件里应包含什么。
 email_subject: "[Prospective Student] Your Name - Master's or PhD - Entry Year"
