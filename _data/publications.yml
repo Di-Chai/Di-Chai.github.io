@@ -19,6 +19,7 @@
   year: 2026
   venue: "ACM SIGOPS ATC 2026 (to appear)"
   selected: true
+  paper: https://arxiv.org/abs/2606.01143
 
 - id: kvmem
   title: "KVMem: Virtualizing Million-Token Agent Workspaces on a Consumer GPU"
