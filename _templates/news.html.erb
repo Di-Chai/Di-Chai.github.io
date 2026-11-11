@@ -2,7 +2,7 @@
   <div class="section-heading"><h2 id="news-title">News</h2></div>
   <ul class="news-list">
     <% news.first(HomePage::NEWS_VISIBLE).each do |item| -%>
-    <li><time datetime="<%= h(item['date']) %>"><%= h(news_month(item)) %></time><span><%= inline_text(item['text']) %></span></li>
+    <%= render('news-item', item: item) %>
     <% end -%>
   </ul>
   <% earlier = news.drop(HomePage::NEWS_VISIBLE) -%>
@@ -11,7 +11,7 @@
     <summary>Earlier news (<%= earlier.size %>)</summary>
     <ul class="news-list">
       <% earlier.each do |item| -%>
-      <li><time datetime="<%= h(item['date']) %>"><%= h(news_month(item)) %></time><span><%= inline_text(item['text']) %></span></li>
+      <%= render('news-item', item: item) %>
       <% end -%>
     </ul>
   </details>

@@ -101,9 +101,11 @@ body { margin: 0; background: var(--background); color: var(--ink); }
 .site-shell .more-publications-label { padding-top: 14px; color: var(--muted); font-size: 13px; font-weight: 600; letter-spacing: .4px; text-transform: uppercase; }
 .news .section-heading { margin-bottom: 6px; }
 .news-list { margin: 0; padding: 0; list-style: none; }
-.news-list li { display: grid; grid-template-columns: 70px minmax(0, 1fr); column-gap: 15px; padding: 6px 0; font-size: 15px; line-height: 1.6; }
+.news-list li { display: grid; grid-template-columns: 24px 60px minmax(0, 1fr); grid-template-areas: "icon date text"; column-gap: 10px; padding: 6px 0; font-size: 15px; line-height: 1.6; }
+.news-icon { grid-area: icon; font: 400 17px/24px "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif; text-align: center; }
+.news-text { grid-area: text; min-width: 0; }
 .news-list strong { white-space: nowrap; }
-.news-list time { padding-top: 1px; color: var(--muted); font-size: 14px; font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.news-list time { grid-area: date; padding-top: 1px; color: var(--muted); font-size: 14px; font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .earlier-news > summary { width: fit-content; padding: 8px 0 4px; color: var(--blue); font-size: 14px; cursor: pointer; }
 .all-publications[open] .when-closed, .all-publications:not([open]) .when-open { display: none; }
 .footer { border-top: 1px solid var(--line); margin-top: 16px; padding-top: 16px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px 20px; font-size: 13px; color: var(--muted); }
@@ -123,14 +125,15 @@ body { margin: 0; background: var(--background); color: var(--ink); }
   .research-update.has-image { grid-template-columns: 140px minmax(0, 1fr); column-gap: 18px; }
   .section { margin-top: 23px; }
   .recruit-banner { padding: 14px 16px; }
-  .news-list li { grid-template-columns: 64px minmax(0, 1fr); column-gap: 12px; }
+  .news-list li { grid-template-columns: 22px 56px minmax(0, 1fr); column-gap: 8px; }
 }
 @media (max-width: 360px) {
   .site-shell { padding-left: 16px; padding-right: 16px; }
   .profile { column-gap: 14px; }
   .nav-links { gap: 0 12px; }
   .research-update { grid-template-columns: 1fr; row-gap: 4px; grid-template-areas: "media" "heading" "content"; }
-  .pub-year-group, .news-list li { grid-template-columns: 1fr; }
+  .pub-year-group { grid-template-columns: 1fr; }
+  .news-list li { grid-template-columns: 22px minmax(0, 1fr); grid-template-areas: "icon date" "icon text"; }
   .site-shell .pub-year { padding-top: 16px; }
   .pub-year-papers > .paper:first-child { padding-top: 4px; }
 }

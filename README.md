@@ -35,7 +35,7 @@ ruby scripts/build.rb --check
 | 文件 | 内容 |
 | --- | --- |
 | `_data/profile.yml` | 个人简介、联系方式、SUFE 教师页链接与招生横幅（`recruiting`） |
-| `_data/news.yml` | News 动态：日期与一句话内容，支持加粗和链接 |
+| `_data/news.yml` | News 动态：日期、类型图标与一句话内容，支持加粗和链接 |
 | `_data/students.yml` | To Prospective Students：招生要求、研究方向卡片、申请方式、建议邮件标题与 proposal 链接 |
 | `_data/publications.yml` | 全部论文、作者、会议、CCF 等级徽章、论文/代码链接，以及 `highlight` 研究亮点 |
 | `_templates/home.html.erb` | 页面结构、个人介绍、搜索与分享元数据 |
@@ -43,6 +43,7 @@ ruby scripts/build.rb --check
 | `_templates/publication-list.html.erb` | 按年份分组的论文列表 |
 | `_templates/publication.html.erb` | 论文条目（会议、徽章与链接按钮） |
 | `_templates/news.html.erb` | News 区域（最新 5 条与折叠的 Earlier news） |
+| `_templates/news-item.html.erb` | 单条动态（图标、年月与内容） |
 | `_templates/students.html.erb` | To Prospective Students 区域（三块：要求 / 研究方向 / 申请方式） |
 | `assets/css/main.css` | 页面样式、字号和手机布局 |
 | `assets/js/navigation.js` | 页内目录当前位置、吸顶高度适配 |
@@ -109,14 +110,17 @@ ruby scripts/build.rb --check
 
 ### 更新 News
 
-招生横幅下方是 News，展示最近的动态（论文录用、获奖、新预印本或开源发布等）。编辑 `_data/news.yml`，每条写一个日期和一句话：
+招生横幅下方是 News，展示最近的动态（论文录用、获奖、新预印本或开源发布等）。编辑 `_data/news.yml`，每条写日期、类型和一句话：
 
 ```yaml
 - date: "2026-09"
+  type: accepted
   text: "[Canopy](#paper-canopy), on tree-aware rollout scheduling for agent reinforcement learning, accepted to **NeurIPS 2026**."
 ```
 
-- `date` 必须加引号，写成 `"YYYY-MM"` 或 `"YYYY-MM-DD"`，页面只显示月份（如 Sep 2026）。不确定具体日期时只写到月份。
+- `date` 必须加引号，写成 `"YYYY-MM"` 或 `"YYYY-MM-DD"`，页面只显示年月（如 2026.09）。不确定具体日期时只写到月份。
+- `type` 决定每条前面的图标：`accepted` 🎉 论文录用、`award` 🏆 获奖、`preprint` 📝 预印本/新论文、`release` 🚀 开源/发布、`talk` 🎤 报告/讲座、`news` 📢 其他（省略 `type` 时默认）。写错类型时生成会提示可选值。
+- 想用其他图标时，加 `icon: "🎊"` 直接指定任意一个 emoji，会覆盖 `type` 的图标。
 - 按月份倒序显示；同一个月内保持文件中的顺序，把较新的写在上面。
 - `text` 支持 `**加粗**` 和 `[链接文字](网址)`。网址可以是 `https://...`、`assets/` 下的文件，或页内链接：`#paper-论文id` 跳到论文条目，`#highlight-论文id` 跳到 Highlighted Projects。生成时会检查页内链接和本地文件是否存在。
 - 未设为 `selected` 的论文默认折叠在 All publications 中，页内链接请指向 selected 论文或 highlight 条目。

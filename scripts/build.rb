@@ -9,7 +9,15 @@ require 'digest'
 class HomePage
   attr_reader :profile, :papers, :config, :students, :news
 
-  MONTHS = %w[Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec].freeze
+  # News `type` picks the icon; an item's own `icon` (any emoji) overrides it.
+  NEWS_ICONS = {
+    'accepted' => "\u{1F389}", # party popper
+    'award' => "\u{1F3C6}",    # trophy
+    'preprint' => "\u{1F4DD}", # memo
+    'release' => "\u{1F680}",  # rocket
+    'talk' => "\u{1F3A4}",     # microphone
+    'news' => "\u{1F4E2}"      # loudspeaker
+  }.freeze
   INLINE_LINK = /\[([^\]]+)\]\(([^)\s]+)\)/.freeze
   NEWS_VISIBLE = 5
 
@@ -107,6 +115,12 @@ class HomePage
       unless date && (1..12).cover?(date[2].to_i) && (date[3].nil? || (1..31).cover?(date[3].to_i))
         raise "News date must be \"YYYY-MM\" or \"YYYY-MM-DD\": #{item['date']}"
       end
+      if item.key?('type') && !NEWS_ICONS.key?(item['type'])
+        raise "News type must be one of #{NEWS_ICONS.keys.join(', ')}: #{item['type'].inspect}"
+      end
+      if item.key?('icon') && !(item['icon'].is_a?(String) && (1..8).cover?(item['icon'].strip.length))
+        raise "News icon must be a single emoji: #{item['icon'].inspect}"
+      end
       item['text'].scan(INLINE_LINK) do |_label, url|
         if url.start_with?('#')
           raise "News link points to a missing section or paper: #{url}" unless anchors.include?(url[1..-1])
@@ -132,8 +146,11 @@ class HomePage
   end
 
   def news_month(item)
-    year, month = item['date'].split('-')
-    "#{MONTHS[month.to_i - 1]} #{year}"
+    item['date'][0, 7].tr('-', '.')
+  end
+
+  def news_icon(item)
+    item['icon'] ? item['icon'].strip : NEWS_ICONS.fetch(item['type'] || 'news')
   end
 
   def h(value)

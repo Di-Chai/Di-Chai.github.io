@@ -1,21 +1,29 @@
 # 动态（News）：显示在招生横幅下方。最新的 5 条直接展示，更早的折叠在 Earlier news 中。
-# date 必须加引号，写成 "YYYY-MM" 或 "YYYY-MM-DD"；页面只显示月份（如 Sep 2026）。不确定具体日期时只写到月份。
+# date 必须加引号，写成 "YYYY-MM" 或 "YYYY-MM-DD"；页面只显示年月（如 2026.09）。不确定具体日期时只写到月份。
 # 页面按月份倒序排列；同一个月内保持本文件中的顺序，把较新的写在上面。
+# type 决定前面的图标：accepted 🎉 论文录用 · award 🏆 获奖 · preprint 📝 预印本/新论文
+#                      release 🚀 开源/发布 · talk 🎤 报告/讲座 · news 📢 其他（省略 type 时默认）
+# 也可以用 icon 直接指定任意一个 emoji（如 icon: "🎊"），会覆盖 type 的图标。
 # text 支持 **加粗** 和 [链接文字](网址)。网址可以是 https://...、assets/ 下的文件，
 # 或页内链接：#paper-论文id 跳到论文条目，#highlight-论文id 跳到 Highlighted Projects 条目。
 # 注意：未设为 selected 的论文条目默认折叠，页内链接请指向 selected 论文或 highlight。
 
 - date: "2026-09"
+  type: accepted
   text: "[Canopy](#paper-canopy), on tree-aware rollout scheduling for agent reinforcement learning, accepted to **NeurIPS 2026**."
 
 - date: "2026-09"
+  type: accepted
   text: "[PrefixFlow](#paper-prefixflow), on training-time KV caching for prefix reuse in LLM RL training, accepted to **ACM SIGOPS ATC 2026**."
 
 - date: "2026-09"
+  type: preprint
   text: "[KVMem](#highlight-kvmem) preprint released on arXiv: virtualizing million-token agent workspaces on a consumer GPU."
 
 - date: "2026-08"
+  type: award
   text: "[UCTB](#paper-uctb) received the **2026 Best Paper Award** from CCF Transactions on Pervasive Computing and Interaction."
 
 - date: "2026-03-19"
+  type: preprint
   text: "Updated [Centrifuge manuscript](https://arxiv.org/abs/2502.00340v2) (ICLR 2026) available on arXiv."
