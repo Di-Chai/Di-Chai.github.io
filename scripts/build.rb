@@ -7,7 +7,11 @@ require 'pathname'
 require 'digest'
 
 class HomePage
-  attr_reader :profile, :papers, :config, :students
+  attr_reader :profile, :papers, :config, :students, :news
+
+  MONTHS = %w[Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec].freeze
+  INLINE_LINK = /\[([^\]]+)\]\(([^)\s]+)\)/.freeze
+  NEWS_VISIBLE = 5
 
   def initialize(root)
     @root = Pathname.new(root)
@@ -85,10 +89,51 @@ class HomePage
       ids << paper['id']
     end
     @papers = records.each_with_index.sort_by { |paper, index| [-paper['year'], index] }.map(&:first)
+    @news = load_news
+  end
+
+  # Newest month first; items within the same month keep their order in news.yml.
+  def load_news
+    items = read_yaml('_data/news.yml') || []
+    raise 'news.yml must contain a list of news items' unless items.is_a?(Array)
+    anchors = %w[about hiring news research students publications contact] +
+      papers.map { |paper| "paper-#{paper['id']}" } +
+      papers.select { |paper| paper['highlight'] }.map { |paper| "highlight-#{paper['id']}" }
+    items.each do |item|
+      unless item.is_a?(Hash) && item['date'].is_a?(String) && item['text'].is_a?(String) && !item['text'].strip.empty?
+        raise "Each news item needs a quoted date and text: #{item.inspect}"
+      end
+      date = item['date'].match(/\A(\d{4})-(\d{2})(?:-(\d{2}))?\z/)
+      unless date && (1..12).cover?(date[2].to_i) && (date[3].nil? || (1..31).cover?(date[3].to_i))
+        raise "News date must be \"YYYY-MM\" or \"YYYY-MM-DD\": #{item['date']}"
+      end
+      item['text'].scan(INLINE_LINK) do |_label, url|
+        if url.start_with?('#')
+          raise "News link points to a missing section or paper: #{url}" unless anchors.include?(url[1..-1])
+        elsif !url.match?(%r{\Ahttps?://}i)
+          raise "News links must start with https://, assets/ or #: #{url}" unless url.start_with?('assets/')
+          local_asset(url)
+        end
+      end
+    end
+    items.each_with_index.sort_by { |item, index| [-item['date'][0, 7].delete('-').to_i, index] }.map(&:first)
   end
 
   def read_yaml(path)
     YAML.safe_load(@root.join(path).read)
+  rescue Psych::DisallowedClass => error
+    raise "#{path}: #{error.message}. Put dates in quotes, e.g. date: \"2026-09\""
+  end
+
+  # News text: **bold** and [label](url); links are validated in load_news.
+  def inline_text(value)
+    h(value).gsub(/\*\*(.+?)\*\*/, '<strong>\1</strong>')
+      .gsub(INLINE_LINK) { "<a href=\"#{Regexp.last_match(2)}\">#{Regexp.last_match(1)}</a>" }
+  end
+
+  def news_month(item)
+    year, month = item['date'].split('-')
+    "#{MONTHS[month.to_i - 1]} #{year}"
   end
 
   def h(value)

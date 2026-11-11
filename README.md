@@ -35,12 +35,14 @@ ruby scripts/build.rb --check
 | 文件 | 内容 |
 | --- | --- |
 | `_data/profile.yml` | 个人简介、联系方式、SUFE 教师页链接与招生横幅（`recruiting`） |
+| `_data/news.yml` | News 动态：日期与一句话内容，支持加粗和链接 |
 | `_data/students.yml` | To Prospective Students：招生要求、研究方向卡片、申请方式、建议邮件标题与 proposal 链接 |
 | `_data/publications.yml` | 全部论文、作者、会议、CCF 等级徽章、论文/代码链接，以及 `highlight` 研究亮点 |
 | `_templates/home.html.erb` | 页面结构、个人介绍、搜索与分享元数据 |
 | `_templates/highlight.html.erb` | Highlighted Projects 的紧凑条目 |
 | `_templates/publication-list.html.erb` | 按年份分组的论文列表 |
 | `_templates/publication.html.erb` | 论文条目（会议、徽章与链接按钮） |
+| `_templates/news.html.erb` | News 区域（最新 5 条与折叠的 Earlier news） |
 | `_templates/students.html.erb` | To Prospective Students 区域（三块：要求 / 研究方向 / 申请方式） |
 | `assets/css/main.css` | 页面样式、字号和手机布局 |
 | `assets/js/navigation.js` | 页内目录当前位置、吸顶高度适配 |
@@ -103,7 +105,22 @@ ruby scripts/build.rb --check
 
 `path` 和 `alt` 必填；生成时会检查图片文件是否存在。不需要配图时移除整个 `image` 段，即恢复纯文字条目。
 
-新版已将动态合并到 Highlighted Projects。旧版 `_data/news.yml` 与 `highlight` 中的 `tagline`、`topic`、`illustration` 作为原始数据保留，当前页面不读取它们。研究方向在简介中说明，旧版 `profile.interests` 列表也不单独展示。
+`highlight` 中的 `tagline`、`topic`、`illustration` 作为原始数据保留，当前页面不读取它们。研究方向在简介中说明，旧版 `profile.interests` 列表也不单独展示。
+
+### 更新 News
+
+招生横幅下方是 News，展示最近的动态（论文录用、获奖、新预印本或开源发布等）。编辑 `_data/news.yml`，每条写一个日期和一句话：
+
+```yaml
+- date: "2026-09"
+  text: "[Canopy](#paper-canopy), on tree-aware rollout scheduling for agent reinforcement learning, accepted to **NeurIPS 2026**."
+```
+
+- `date` 必须加引号，写成 `"YYYY-MM"` 或 `"YYYY-MM-DD"`，页面只显示月份（如 Sep 2026）。不确定具体日期时只写到月份。
+- 按月份倒序显示；同一个月内保持文件中的顺序，把较新的写在上面。
+- `text` 支持 `**加粗**` 和 `[链接文字](网址)`。网址可以是 `https://...`、`assets/` 下的文件，或页内链接：`#paper-论文id` 跳到论文条目，`#highlight-论文id` 跳到 Highlighted Projects。生成时会检查页内链接和本地文件是否存在。
+- 未设为 `selected` 的论文默认折叠在 All publications 中，页内链接请指向 selected 论文或 highlight 条目。
+- 最新 5 条直接显示，更早的自动折叠在 **Earlier news** 中，无需删除旧动态。删除全部条目（写 `[]`）即隐藏 News。
 
 ### 更新 To Prospective Students
 
@@ -140,7 +157,7 @@ proposals:
 
 本地 PDF 放在 `assets/pdf/`，`url` 填写 `assets/pdf/实际文件名.pdf`。生成时会检查本地文件是否存在。暂时没有 proposal 时保留 `proposals: []`。
 
-顶部是左对齐的页内目录：**About / Projects / Join Us / Publications**，顺序与页面区域一致，点击会定位到对应区域；Join Us 指向 To Prospective Students。滚动时当前栏目自动标蓝；手机上导航会换行，定位会避开吸顶栏。没有研究亮点时会自动隐藏 Projects 导航。旧链接 `#hiring` 仍然有效，会定位到招生横幅。
+顶部是左对齐的页内目录：**About / Projects / Join Us / Publications**，顺序与页面区域一致，点击会定位到对应区域；Join Us 指向 To Prospective Students。News 紧接在简介下方，为了让手机上的导航保持一行，没有单独的导航项（可用 `#news` 链接）。滚动时当前栏目自动标蓝；手机上导航会换行，定位会避开吸顶栏。没有研究亮点时会自动隐藏 Projects 导航。旧链接 `#hiring` 仍然有效，会定位到招生横幅。
 
 右上角是单个颜色切换按钮：浅色显示太阳，深色显示月亮，点击切换到另一种模式。首次访问默认跟随 macOS 等操作系统的颜色偏好并实时响应变化；手动切换后会记住当前浏览器的选择。主题逻辑在 `assets/js/theme.js`，配色变量在 `assets/css/main.css`，打印始终使用浅色。
 

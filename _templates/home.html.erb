@@ -67,6 +67,9 @@
         <a class="button" href="#students">Join my group <span aria-hidden="true">→</span></a>
       </aside>
       <% end -%>
+      <% unless news.empty? -%>
+      <%= render('news') %>
+      <% end -%>
       <% highlights = papers.select { |paper| paper['highlight'] } -%>
       <% unless highlights.empty? -%>
       <section class="section research" id="research" tabindex="-1" aria-labelledby="research-title">
